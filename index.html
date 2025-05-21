@@ -1,56 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan</title>
+    <title>Ethan Tianyi Wu - Personal Academic Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5F5;
+            color: #333333;
+        }
+        header {
+            background-color: #005A9C; /* Prussian Blue */
+            color: #FFFFFF;
+            padding: 1rem 0;
             text-align: center;
         }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+        nav {
+            background-color: #333333;
+            color: #FFFFFF;
+            padding: 0.5rem 0;
+            text-align: center;
         }
-
-        h1 {
-            color: #FF5733;
-        }
-
-        .fun-fact {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #4CAF50;
-            color: white;
+        nav a {
+            color: #FFFFFF;
+            margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #00BFFF; /* Deep Sky Blue */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #005A9C; /* Prussian Blue */
+            font-family: 'Montserrat', sans-serif;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #EAEAEA;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto;
+            border: 3px solid #005A9C;
+        }
+        .publication, .project {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #E0E0E0;
             border-radius: 5px;
         }
-
-        .button:hover {
-            background-color: #45a049;
+        .publication strong, .project strong {
+            font-size: 1.1em;
+            color: #005A9C;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #00BFFF; /* Deep Sky Blue */
+            color: white;
+            padding: 2px 8px;
+            margin: 2px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .cv-link a {
+            display: inline-block;
+            background-color: #4DB870; /* Accent Green */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cv-link a:hover {
+            background-color: #3a8f5a;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+            color: #FFFFFF;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <h1></h1>
-        <div class="fun-fact">
-            <p>Hello</p>
-            <p></p>
-        </div>
-        <a href="https://th.bing.com/th/id/R.5e0631befce3b4ac035a31def54c345f?rik=KCQozMOVa6wOYA&pid=ImgRaw&r=0" class="button">点一下哦</a>
-    </div>
-</body>
 
+    <header>
+        <h1>Ethan Tianyi Wu</h1>
+        <p>Undergraduate Student, Information and Computing Science, Xi'an Jiaotong-Liverpool University (XJTLU)</p>
+        <p>Focusing on Artificial Intelligence, Multimodal Emotion Recognition, and their applications in Education and Biomedicine.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="home" class="section">
+            <h2>Welcome</h2>
+            <img src="placeholder_profile.jpg" alt="Ethan Tianyi Wu - Professional Photo" class="profile-img">
+             <p>Ethan Tianyi Wu, an undergraduate student in Information and Computing Science at Xi'an Jiaotong-Liverpool University, specializing in Artificial Intelligence, Multimodal Emotion Recognition, and its applications in Education and Biomedicine. [cite: 1]</p>
+            <h3>Key Highlights</h3>
+            <ul>
+                <li><a href="#research-M3RNet">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers (ICCV 2025 Submission)</a> [cite: 5, 6]</li>
+                <li><a href="#research-EmoMA-Net">EmoMA-Net: A Novel Model for Emotion Recognition in Adaptive Educational Systems (ICBDE 2024 Published)</a> [cite: 5, 12]</li>
+            </ul>
+            <h3>Research Interests</h3>
+            <p>
+                <span class="tag">Multimodal Learning</span>
+                <span class="tag">Emotion Computation</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Adaptive Systems</span>
+                <span class="tag">Biomedical Engineering</span>
+                <span class="tag">Machine Learning</span>
+            </p>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <h3>Educational Background</h3>
+            <p><strong>Xi'an Jiaotong-Liverpool University (XJTLU), Suzhou, China</strong><br>
+                Bachelor's in Information and Computing Science (Sept. 2022 - Jul. 2026 (Expected)) [cite: 1, 2]<br>
+                GPA: 4.0/4.0 [cite: 3]<br>
+                Honors: 2023-2024 Xi'an Jiaotong-Liverpool University Undergraduate Academic Scholarship (Top 10%) [cite: 3]
+            </p>
+            <p><strong>Online Courses & Self-Learning:</strong></p>
+            <ul>
+                <li>UC Los Angeles, Online: Electrical Engineering - IoT and UAV Array Network Communication System Design (Nov. 2024) [cite: 4]</li>
+                <li>Imperial College London, Online: Machine Learning in Biomedical Sciences and Bioengineering (Mar. 2024) [cite: 4]</li>
+                <li>UC Berkeley, Online (Self-learning): CS61B: Data Structures and Algorithms (Apr. 2023) [cite: 4]</li>
+            </ul>
+
+            <h3>Research Interests and Passion</h3>
+            <p>My research focuses on advancing multimodal emotion recognition through innovative deep learning architectures. My work on M3RNet involves integrating memory-augmented transformers to improve long-term feature retention for more accurate emotional cue detection. [cite: 6, 8, 9] EmoMA-Net aims to enhance adaptive learning environments by providing real-time feedback on student stress levels using physiological data. [cite: 12, 13] I am passionate about applying these technologies to create impactful solutions in education and biomedical fields.</p>
+
+            <h3>Career Goals and Vision</h3>
+            <p>I aim to pursue further academic studies and contribute to cutting-edge research in artificial intelligence and human-computer interaction, with a vision to develop technologies that can meaningfully improve people's lives.</p>
+
+            <h3>Personal Interests and Activities</h3>
+            <p>Piano (Level 10 certification, Shanghai Conservatory of Music), Street Dance (Level 4 certification, China Street Dance Association), Badminton, Movies. [cite: 47] <br>
+            Member, Xi'an Jiaotong-Liverpool University Psychology Association (PSYA). [cite: 47]</p>
+        </section>
+
+        <section id="research" class="section">
+            <h2>Research / Publications</h2>
+            <h3>Awaiting Publication Results / Under Review</h3>
+            <div class="publication" id="research-M3RNet">
+                <p><strong>M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers on Physiological, Behavioral, and Video Modalities</strong> [cite: 5, 6]<br>
+                <em>Wu, T., Huang, Y., & Purwanto, E.</em><br>
+                Submitted to: International Conference on Computer Vision (ICCV 2025) [cite: 5]<br>
+                Role: First Author [cite: 6]<br>
+                Abstract: M3RNet advances multimodal emotion recognition by integrating a memory-augmented transformer, the Memory Stream, to improve long-term feature retention. [cite: 6] This system, utilizing the TMBL framework, enables sophisticated multimodal fusion that boosts accuracy across datasets like PPB-Emo and CL-Drive. [cite: 7] Introduced M3RNet, featuring the Memory Stream, to enhance the transformer's ability to maintain long-term feature memory. [cite: 8] Enhanced accuracy and stability across diverse emotional datasets. [cite: 9] Implemented TMBL to fuse physiological and video data, boosting effectiveness in managing cross-modal interactions. [cite: 10] Achieved over 9.15% improvement in accuracy on the PPB-Emo dataset and surpassed baseline models by 10.09% on the CL-Drive dataset. [cite: 11]</p>
+                </div>
+            <div class="publication">
+                <p><strong>Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition with Periodicity and Contextual Attention</strong> [cite: 5]<br>
+                <em>Purwanto, E., Wu, T., & Huang, Y.</em><br>
+                Submitted to: IEEE Transactions on Affective Computing [cite: 5]</p>
+            </div>
+
+            <h3>Published</h3>
+            <div class="publication" id="research-EmoMA-Net">
+                <p><strong>EmoMA-Net: A Novel Model for Emotion Recognition Using Hybrid Multimodal Neural Networks in Adaptive Educational Systems</strong> [cite: 5, 12]<br>
+                <em>Wu, T., Huang, Y., Craig, P., & Purwanto, E. (2024)</em><br>
+                Venue: In Proceedings of The 7th International Conference on Big Data and Education (ICBDE 2024), Paper No. CD1068, September 24-26, 2024, Trinity College, University of Oxford, UK. [cite: 5]<br>
+                Role: First Author [cite: 12]<br>
+                Abstract: Developed EmoMA-Net, a novel multimodal neural network for real-time emotion recognition in educational settings. [cite: 12] Utilizes physiological data to enhance adaptive learning by providing feedback on student stress levels. [cite: 13] Designed framework integrating LSTM and CNNs. [cite: 14] Incorporated Convolutional Block Attention Module (CBAM) for optimized feature extraction. [cite: 15, 16] Utilized LSTM for enhanced temporal analysis. [cite: 17] Achieved up to 99.66% prediction accuracy on the WESAD dataset. [cite: 18]</p>
+                </div>
+            <div class="publication">
+                <p><strong>Enhancing Multilingual Emotion Classification with Attention Mechanism for Transnational Education</strong> [cite: 5]<br>
+                <em>Wu, T., Huang, Y., Purwanto, E., Juwono, F., & Tang, F. (2025)</em><br>
+                Venue: In Proceedings of the 2025 International Conference on Artificial Intelligence and Education (ICAIE 2025), May 14-16, 2025, Suzhou, China. [cite: 5]</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Project Experience</h2>
+            <div class="project">
+                <p><strong>Daily Reading Tracker Design</strong> (Apr. 2025) [cite: 20]</p>
+                <p>Role: Developer</p>
+                <p>Description: Developed a secure and efficient reading tracker system with user authentication (registration, email verification, password encryption, JWT session management), role assignment, and password recovery. [cite: 20, 21] Enhanced reading log management with multi-criteria search. [cite: 22] Built front end with HTML5, CSS3, JavaScript and back end with Spring Boot for CRUD APIs. [cite: 23] Implemented front-end and back-end data validation. [cite: 23] Modularized back-end services and used Spring Security. [cite: 24] Conducted unit, integration (Mockito, Spring Boot Test), and load tests. [cite: 25, 26]</p>
+                <p>Technologies: <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JavaScript</span> <span class="tag">JWT</span> <span class="tag">Spring Security</span> <span class="tag">Mockito</span></p>
+            </div>
+            <div class="project">
+                <p><strong>Kaggle - RSNA 2024 Lumbar Spine Degenerative Classification</strong> (Sept. 2024) [cite: 27]</p>
+                <p>Role: Developer</p>
+                <p>Description: Developed a multi-stage deep learning model (ResNet-UNet) to detect and classify degenerative lumbar spine conditions from MRI images. [cite: 27] Used PCA for feature extraction and dimensionality reduction; image preprocessing (histogram equalization, Gaussian filtering). [cite: 28] Integrated ResNet (encoder) and UNet (decoder) with skip connections. [cite: 29] Applied multi-task learning for severity prediction. [cite: 30] Optimized with weighted binary cross-entropy loss, temperature scaling, and ensemble methods (soft voting). [cite: 31, 32]</p>
+                <p>Technologies: <span class="tag">Python</span> <span class="tag">Deep Learning</span> <span class="tag">ResNet</span> <span class="tag">UNet</span> <span class="tag">PCA</span> <span class="tag">MRI Analysis</span></p>
+            </div>
+            <div class="project">
+                <p><strong>Student Data Analysis</strong> (Mar. 2024 - Jun. 2024) [cite: 33]</p>
+                <p>Role: Analyst</p>
+                <p>Description: Performed preprocessing and PCA on student data. [cite: 33] Classified student projects using decision trees, random forests, SVM, and Naive Bayes. [cite: 34] Built an ensemble classifier. [cite: 34] Fitted feature distributions using GMM, k-means, and hierarchical clustering. [cite: 35]</p>
+                <p>Technologies: <span class="tag">Python</span> <span class="tag">Scikit-learn</span> <span class="tag">PCA</span> <span class="tag">Decision Trees</span> <span class="tag">Random Forest</span> <span class="tag">SVM</span> <span class="tag">Naive Bayes</span> <span class="tag">Clustering</span></p>
+            </div>
+             <div class="project">
+                <p><strong>Regression Analysis and Deep Learning Applications</strong> (Jan. 2024 - May 2024) [cite: 36]</p>
+                <p>Role: Developer</p>
+                <p>Description: Implemented regression algorithms and multivariate models. [cite: 36] Optimized linear/logistic regression with gradient descent. [cite: 37] Utilized CNNs and MLPs for MNIST classification. [cite: 38] Developed RNN models (PyTorch) for text classification, optimized with SGD and NLLLoss. [cite: 38] Built sequence-to-sequence models and a CNN for image classification on MNIST, improved with data augmentation and regularization. [cite: 39] Designed model saving/loading functionalities. [cite: 40]</p>
+                <p>Technologies: <span class="tag">Python</span> <span class="tag">PyTorch</span> <span class="tag">CNN</span> <span class="tag">MLP</span> <span class="tag">RNN</span> <span class="tag">Regression</span> <span class="tag">MNIST</span></p>
+            </div>
+            <div class="project">
+                <p><strong>Summer Undergraduate Research Fellow, MetaTeddy: Interactive Reality Modeling Interface for 3D Freeform Design</strong> (Jun. 2023 - Sept. 2023) [cite: 41]</p>
+                <p>Role: Research Fellow</p>
+                <p>Description: Gathered literature for implementation principles. [cite: 42] Developed a 2D interactive interface using Unity (Teddy system framework). [cite: 43] Implemented cutting operations (CGAL) and enhanced model manipulation (TouchScript). [cite: 44] Integrated XR technologies (Microsoft Hololens 2). [cite: 45] Combined Meta Teddy with AR headsets via Unity and AR Foundation. [cite: 46] Used Node.js with Socket.io for network connections between server and AR glasses. [cite: 46]</p>
+                <p>Technologies: <span class="tag">Unity</span> <span class="tag">CGAL</span> <span class="tag">Microsoft Hololens 2</span> <span class="tag">AR Foundation</span> <span class="tag">Node.js</span> <span class="tag">Socket.io</span> <span class="tag">XR</span></p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <h3>Programming Languages & Tools</h3>
+            <p>
+                <span class="tag">Python (Pandas, Numpy, Scikit-learn, Matplotlib, Seaborn, TensorFlow, PyTorch, pytest)</span> [cite: 47]
+                <span class="tag">Java (JUnit, Spring Boot)</span> [cite: 47]
+                <span class="tag">SQL (MySQL, Snowflake)</span> [cite: 47]
+                <span class="tag">R</span> [cite: 47]
+                <span class="tag">Matlab</span> [cite: 47]
+                <span class="tag">Git</span> [cite: 47]
+            </p>
+            <h3>Technical Domains</h3>
+            <p>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Data Analysis & Visualization</span>
+                <span class="tag">Software Engineering</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Multimodal Learning</span>
+                <span class="tag">Full-Stack Development</span>
+                <span class="tag">XR Development</span>
+            </p>
+            <h3>Languages</h3>
+            <p>
+                <span class="tag">Chinese (Native)</span> [cite: 47]
+                <span class="tag">English (Fluent, over 2 years in an all-English teaching environment)</span> [cite: 47]
+            </p>
+        </section>
+
+        <section id="cv" class="section">
+            <h2>CV / Resume</h2>
+            <p class="cv-link"><a href="Tianyi Wu CV 5.6.pdf" target="_blank">Download My CV (PDF)</a></p>
+            <p>Please ensure the CV file "Tianyi Wu CV 5.6.pdf" is in the same directory as this HTML file, or update the link accordingly.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:18895396922@163.com">18895396922@163.com</a> [cite: 1]</p>
+            <p>GitHub: <a href="https://github.com/EthanTianyiWu" target="_blank">github.com/EthanTianyiWu</a> (Please verify this is the correct GitHub profile)</p>
+            </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ethan Tianyi Wu. All rights reserved.</p>
+        <p>Based on the design proposal and CV provided.</p>
+    </footer>
+
+</body>
 </html>
-s
