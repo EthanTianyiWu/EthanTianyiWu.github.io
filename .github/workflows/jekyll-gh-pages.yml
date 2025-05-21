@@ -27,25 +27,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        # Updated from actions/checkout@v3 to actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        # Updated from actions/configure-pages@v3 to actions/configure-pages@v5
+        # This action configures GitHub Pages for the deployment.
+        uses: actions/configure-pages@v5
       - name: Build with Jekyll
+        # actions/jekyll-build-pages@v1 is still the current version for this GitHub-provided action.
+        # It handles Jekyll build using versions compatible with GitHub Pages.
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
-          destination: ./_site
+          source: ./ # Specifies the source directory for Jekyll site (root in this case)
+          destination: ./_site # Specifies the destination directory for the built site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        # Updated from actions/upload-pages-artifact@v2 to actions/upload-pages-artifact@v3
+        # This action uploads the built site as an artifact for the deployment job.
+        uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }} # The URL of the deployed page
     runs-on: ubuntu-latest
-    needs: build
+    needs: build # Ensures the build job completes successfully before deploying
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        # Updated from actions/deploy-pages@v2 to actions/deploy-pages@v4
+        # This action handles the deployment of the artifact to GitHub Pages.
+        uses: actions/deploy-pages@v4
