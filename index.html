@@ -3,406 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tianyi Wu (Ethan) - Personal Academic Page</title>
+    <title>Ethan Tianyi Wu - Personal Academic Page</title>
     <style>
         :root {
-            --primary-color: #005A9C; /* Prussian Blue */
-            --secondary-color: #333333; /* Dark Gray for Nav */
-            --accent-color-blue: #00BFFF; /* Deep Sky Blue */
-            --accent-color-green: #4DB870; /* Accent Green */
-            --light-bg-color: #F5F5F5;
-            --text-color: #333333;
+            --primary-color: #2A6EAF; /* A more refined, slightly desaturated blue */
+            --secondary-color: #1D2F3E; /* Darker, sophisticated for nav/footer */
+            --accent-color: #E67E22; /* A warm, vibrant accent (e.g., orange/copper) */
+            --light-bg-color: #F8F9FA; /* Very light gray for main background */
             --card-bg-color: #FFFFFF;
-            --card-border-color: #E0E0E0;
+            --text-color: #343A40; /* Dark gray for body text */
+            --heading-color: #2C3E50; /* Slightly different dark for headings */
+            --border-color: #DEE2E6;
             --heading-font: 'Montserrat', sans-serif;
             --body-font: 'Open Sans', sans-serif;
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: var(--body-font);
             line-height: 1.7;
-            margin: 0;
-            padding: 0;
             background-color: var(--light-bg-color);
             color: var(--text-color);
-            padding-top: 60px; /* Adjusted for slightly taller nav */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        header {
-            background-color: var(--primary-color);
-            color: #FFFFFF;
-            padding: 2.5rem 1.5rem; /* Increased padding */
-            text-align: center;
-        }
-        header h1 {
-            margin-bottom: 0.5rem;
-            color: #FFFFFF;
-            font-family: var(--heading-font);
-            font-size: 2.5em; /* Larger main title */
-        }
-        header p {
-            font-size: 1.15em;
-            margin-bottom: 0.5rem;
-            opacity: 0.9;
-        }
-        nav {
+
+        /* Navigation Bar */
+        .navbar {
             background-color: var(--secondary-color);
-            padding: 1rem 0; /* Increased padding */
+            padding: 1rem 2rem;
             text-align: center;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            box-shadow: 0 2px 10px var(--shadow-medium);
+            display: flex; /* For better alignment */
+            justify-content: center; /* Center nav items */
+            align-items: center;
         }
-        nav a {
-            color: #FFFFFF;
-            margin: 0 20px;
+        .navbar a {
+            color: #EAEAEA; /* Lighter color for better contrast on dark nav */
+            margin: 0 1.2rem;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05em; /* Slightly larger nav links */
-            transition: color 0.3s ease;
+            font-weight: 600; /* Slightly bolder */
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding: 0.5rem 0;
         }
-        nav a:hover, nav a.active {
-            color: var(--accent-color-blue);
+        .navbar a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
         }
-        .container {
-            width: 85%;
-            max-width: 1100px; /* Slightly reduced for tighter content flow */
-            margin: 30px auto;
-            padding: 30px;
-            background-color: var(--card-bg-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            border-radius: 10px;
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1A4A7A 100%);
+            color: #FFFFFF;
+            padding: 6rem 2rem 4rem; /* More padding, accounting for fixed nav */
+            text-align: center;
+            position: relative; /* For potential pseudo-elements */
+            margin-top: 60px; /* Height of navbar approx */
         }
-        h1, h2, h3 {
-            color: var(--primary-color);
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
             font-family: var(--heading-font);
+            font-size: 3em; /* Larger */
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #FFFFFF;
+            line-height: 1.2;
         }
-        h2 {
-            font-size: 1.8em; /* Adjusted size */
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 12px;
-            margin-top: 2em;
-            margin-bottom: 1.5em;
+        .hero .subtitle {
+            font-size: 1.3em;
+            font-weight: 300; /* Lighter weight for subtitle */
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.5;
         }
-        h3 {
-            font-size: 1.4em; /* Adjusted size */
-            margin-top: 1.5em;
-            margin-bottom: 1em;
-            color: #004170; /* Darker shade for H3 */
-        }
-        .section {
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #EAEAEA; /* Slightly lighter border */
-        }
-        .section:last-child {
-            border-bottom: none;
-            padding-bottom: 10px; /* Less padding for the last section */
-        }
-        .profile-img {
-            width: 160px;
-            height: 160px;
+        .profile-img-hero {
+            width: 180px; /* Larger */
+            height: 180px;
             border-radius: 50%;
-            display: block;
-            margin: 30px auto;
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 5px solid var(--accent-color); /* Accent border */
+            margin: 0 auto 2rem auto; /* Centered, with margin bottom */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            display: block; /* Ensure it's block for margin auto to work */
         }
-        .publication, .project {
-            margin-bottom: 25px;
-            padding: 20px;
-            border: 1px solid var(--card-border-color);
-            border-radius: 8px;
-            background-color: #FAFAFA; /* Slightly off-white card background */
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 1.5rem;
         }
-        .publication:hover, .project:hover {
-            box-shadow: 0 6px 18px rgba(0, 75, 128, 0.18);
-            transform: translateY(-4px);
+
+        /* Section Styling */
+        .section {
+            background-color: var(--card-bg-color);
+            padding: 2.5rem 2rem; /* More padding */
+            margin-bottom: 2.5rem; /* More space between sections */
+            border-radius: 12px; /* More pronounced radius */
+            box-shadow: 0 8px 30px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .publication .title, .project .title { /* Specific class for title */
-            font-size: 1.25em;
-            font-weight: bold;
+         .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px var(--shadow-medium);
+        }
+
+        .section-title {
+            font-family: var(--heading-font);
+            font-size: 2.2em; /* Larger section titles */
+            font-weight: 700;
+            color: var(--heading-color);
+            text-align: center;
+            margin-bottom: 2.5rem; /* More space after title */
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        .section-title::after { /* Underline accent */
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 { /* Sub-headings within sections */
+            font-family: var(--heading-font);
+            font-size: 1.5em;
+            font-weight: 600;
             color: var(--primary-color);
-            display: block;
-            margin-bottom: 8px;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
         }
-        .publication .authors, .project .role {
+
+        /* Card Styling (for Publications and Projects) */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
+            gap: 2rem;
+        }
+        .card {
+            background-color: #FDFDFD; /* Slightly off-white */
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.8rem; /* More padding */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column; /* Ensure content flows top to bottom */
+        }
+        .card:hover {
+            transform: translateY(-8px); /* More lift */
+            box-shadow: 0 10px 25px var(--shadow-medium);
+        }
+        .card .title {
+            font-family: var(--heading-font);
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+        .card .authors, .card .role {
             font-style: italic;
-            color: #555555;
-            display: block;
-            margin-bottom: 8px;
+            color: #5F6C7B; /* Muted color */
             font-size: 0.95em;
+            margin-bottom: 0.6rem;
         }
-        .publication .venue, .project .date {
-            color: #777777;
+        .card .venue, .card .date {
+            color: #7F8C9B; /* Muted color */
             font-size: 0.9em;
-            margin-bottom: 10px;
-            display: block;
+            margin-bottom: 1rem;
         }
-        .publication .abstract, .project .description {
+        .card .abstract, .card .description {
             font-size: 0.95em;
             line-height: 1.6;
-            margin-bottom: 12px;
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Make description take available space */
         }
-        .publication .links a, .project .links a { /* For links within cards */
+        .card .description ul {
+            list-style-position: outside;
+            padding-left: 1.2rem; /* Indent list items */
+            margin-top: 0.5rem;
+        }
+        .card .description li {
+            margin-bottom: 0.5rem; /* Space between list items */
+        }
+        .card .links a {
             text-decoration: none;
-            color: var(--accent-color-blue);
-            font-weight: bold;
-            font-size: 0.9em;
-            margin-right: 15px;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
         }
-        .publication .links a:hover, .project .links a:hover {
-            text-decoration: underline;
+        .card .links a:hover {
             color: var(--primary-color);
+            text-decoration: underline;
         }
-        .external-link-icon { /* Basic icon style */
+        .external-link-icon {
             display: inline-block;
-            width: 12px;
-            height: 12px;
-            margin-left: 4px;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23007bff%22%3E%3Cpath%20d%3D%22M19%2019H5V5h7V3H5c-1.11%200-2%20.9-2%202v14c0%201.1.9%202%202%202h14c1.1%200%202-.9%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E');
+            width: 1em; /* Relative to font size */
+            height: 1em;
+            margin-left: 0.3em;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23E67E22%22%3E%3Cpath%20d%3D%22M19%2019H5V5h7V3H5c-1.11%200-2%20.9-2%202v14c0%201.1.9%202%202%202h14c1.1%200%202-.9%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E');
             background-repeat: no-repeat;
             background-size: contain;
             vertical-align: middle;
+            filter: brightness(0.9); /* Slightly tone down icon if needed */
+        }
+        .card .technologies { /* Container for tags */
+            margin-top: auto; /* Push to bottom if card is flex */
+            padding-top: 1rem; /* Space above tags */
         }
         .tag {
             display: inline-block;
-            background-color: var(--accent-color-blue);
+            background-color: var(--primary-color); /* Primary color for tags */
+            opacity: 0.85;
             color: white;
-            padding: 5px 12px;
-            margin: 4px;
+            padding: 0.4em 0.9em; /* Em-based padding */
+            margin: 0.25em;
             border-radius: 5px;
-            font-size: 0.88em;
-            font-weight: bold;
+            font-size: 0.85em;
+            font-weight: 500; /* Lighter weight */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .tag:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+        .cv-link {
+            text-align: center; /* Center the button */
+            margin-top: 1.5rem;
         }
         .cv-link a {
             display: inline-block;
-            background-color: var(--accent-color-green);
+            background-color: var(--accent-color);
             color: white;
-            padding: 12px 28px;
+            padding: 0.9rem 2.2rem; /* Generous padding */
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1.05em; /* Larger CV button text */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 10px; /* Space above CV button */
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
         }
         .cv-link a:hover {
-            background-color: #3a8f5a;
-            transform: translateY(-2px);
+            background-color: #D35400; /* Darker accent */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
         }
-        footer {
+
+        /* About Me Section Specifics */
+        #about .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        #about .about-text {
+            flex: 2; /* Takes more space */
+            min-width: 300px;
+        }
+        #about .about-details {
+            flex: 1;
+            min-width: 280px;
+            background-color: #F8F9FA; /* Light background for detail box */
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        #about .about-details h3 {
+            margin-top: 0; /* Remove top margin for first h3 in this box */
+            font-size: 1.3em;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-color);
+            color: #BDC3C7; /* Lighter gray */
             text-align: center;
-            padding: 30px;
-            background-color: #222222; /* Even darker footer */
-            color: #CCCCCC;
-            margin-top: 40px;
-            font-size: 0.9em;
+            padding: 3rem 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.95em;
         }
-        footer p {
-            margin: 6px 0;
+        .footer p {
+            margin: 0.5rem 0;
         }
-        ul {
-            list-style-position: outside;
-            padding-left: 22px;
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        li {
-            margin-bottom: 10px;
+        .footer a:hover {
+            color: #FFFFFF;
         }
-        /* Helper class for small text, e.g., role/date lines */
-        .small-text {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 5px;
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero .subtitle { font-size: 1.1em; }
+            .profile-img-hero { width: 140px; height: 140px; }
+            .navbar { padding: 0.8rem 1rem; justify-content: space-around; } /* Spread out more on mobile */
+            .navbar a { margin: 0 0.5rem; font-size: 0.9rem; }
+            .section { padding: 2rem 1.5rem; }
+            .section-title { font-size: 1.8em; }
+            #about .about-content { flex-direction: column; }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Tianyi Wu (Ethan)</h1>
-        <p>Undergraduate Student, Information and Computing Science, Xi'an Jiaotong-Liverpool University (XJTLU)</p>
-        <p>Focusing on Artificial Intelligence, Multimodal Emotion Recognition, and their applications in Education and Biomedicine.</p>
-    </header>
-
-    <nav>
+    <nav class="navbar">
         <a href="#home">Home</a>
-        <a href="#about">About Me</a>
+        <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="container">
+    <header class="hero" id="home">
+        <img src=".github/workflows/45x45-吴天一.jpg" alt="Ethan Tianyi Wu" class="profile-img-hero">
+        <div class="hero-content">
+            <h1>Ethan Tianyi Wu</h1>
+            <p class="subtitle">Information & Computing Science Undergraduate at XJTLU.<br>Passionate about AI, Multimodal Emotion Recognition, and impactful applications in Education & Biomedicine.</p>
+            <div class="cv-link">
+                <a href=".github/workflows/Tianyi Wu CV 5.6.pdf" target="_blank">Download CV <span class="external-link-icon"></span></a>
+            </div>
+        </div>
+    </header>
 
-        <section id="home" class="section">
-            <h2>Welcome</h2>
-            <img src="45x45-吴天一.jpg" alt="Tianyi Wu - Professional Photo" class="profile-img">
-            <p>Tianyi Wu, an undergraduate student in Information and Computing Science at Xi'an Jiaotong-Liverpool University, specializing in Artificial Intelligence, Multimodal Emotion Recognition, and its applications in Education and Biomedicine.</p>
-            <h3>Key Highlights</h3>
-            <ul>
-                <li><a href="#research-M3RNet">M3RNet: Enhancing Multimodal Emotion Recognition (ICCV 2025 Submission)</a></li>
-                <li><a href="#research-EmoMA-Net">EmoMA-Net: Emotion Recognition in Adaptive Educational Systems (ICBDE 2024 Published)</a></li>
-            </ul>
-            <h3>Research Interests</h3>
-            <p>
-                <span class="tag">Multimodal Learning</span>
-                <span class="tag">Emotion Computation</span>
-                <span class="tag">Deep Learning</span>
-                <span class="tag">Computer Vision</span>
-                <span class="tag">Adaptive Systems</span>
-                <span class="tag">Biomedical Engineering</span>
-                <span class="tag">Machine Learning</span>
-            </p>
-        </section>
-
+    <main class="container">
         <section id="about" class="section">
-            <h2>About Me</h2>
-            <h3>Educational Background</h3>
-            <p><strong class="title">Xi'an Jiaotong-Liverpool University (XJTLU), Suzhou, China</strong>
-                Bachelor's in Information and Computing Science (Sept. 2022 - Jul. 2026 Expected)<br>
-                GPA: 4.0/4.0<br>
-                Honors: 2023-2024 Xi'an Jiaotong-Liverpool University Undergraduate Academic Scholarship (Top 10%)
-            </p>
-            <p><strong>Online Courses & Self-Learning:</strong></p>
-            <ul>
-                <li>UC Los Angeles, Online: Electrical Engineering - IoT and UAV Array Network Communication System Design (Nov. 2024)</li>
-                <li>Imperial College London, Online: Machine Learning in Biomedical Sciences and Bioengineering (Mar. 2024)</li>
-                <li>UC Berkeley, Online (Self-learning): CS61B: Data Structures and Algorithms (Apr. 2023)</li>
-            </ul>
-
-            <h3>Research Interests and Passion</h3>
-            <p>My research focuses on advancing multimodal emotion recognition through innovative deep learning architectures. My work on M3RNet involves integrating memory-augmented transformers to improve long-term feature retention for more accurate emotional cue detection. EmoMA-Net aims to enhance adaptive learning environments by providing real-time feedback on student stress levels using physiological data. I am passionate about applying these technologies to create impactful solutions in education and biomedical fields.</p>
-
-            <h3>Career Goals and Vision</h3>
-            <p>I aim to pursue further academic studies and contribute to cutting-edge research in artificial intelligence and human-computer interaction, with a vision to develop technologies that can meaningfully improve people's lives.</p>
-
-            <h3>Personal Interests and Activities</h3>
-            <p>Piano (Level 10 certification, Shanghai Conservatory of Music), Street Dance (Level 4 certification, China Street Dance Association), Badminton, Movies. <br>
-            Member, Xi'an Jiaotong-Liverpool University Psychology Association (PSYA).</p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="mb-2">I am an undergraduate student at Xi'an Jiaotong-Liverpool University (XJTLU), pursuing a Bachelor's in Information and Computing Science with an expected graduation in July 2026. I maintain a GPA of 4.0/4.0 and was honored with the 2023-2024 Undergraduate Academic Scholarship (Top 10%).</p>
+                    <p class="mb-2">My research focuses on advancing multimodal emotion recognition through innovative deep learning architectures. Key projects like M3RNet and EmoMA-Net highlight my work in integrating memory-augmented transformers and hybrid neural networks to improve emotional cue detection and enhance adaptive learning environments using physiological data. I am passionate about applying these technologies to create impactful solutions in education and biomedical fields.</p>
+                    <p>Beyond academics, I am proficient in both Chinese (native) and English (fluent from over two years in an all-English teaching environment). My interests include Piano (Level 10, Shanghai Conservatory of Music), Street Dance (Level 4, China Street Dance Association), Badminton, and Movies. I am also an active member of the XJTLU Psychology Association (PSYA).</p>
+                </div>
+                <aside class="about-details">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li><strong>Degree:</strong> B.Sc. Information & Computing Science</li>
+                        <li><strong>Institution:</strong> XJTLU</li>
+                        <li><strong>GPA:</strong> 4.0/4.0</li>
+                        <li><strong>Expected Graduation:</strong> July 2026</li>
+                    </ul>
+                    <h3>Online Learning</h3>
+                    <ul>
+                        <li>UCLA: IoT & UAV Systems</li>
+                        <li>Imperial College: ML in Biomedicine</li>
+                        <li>UC Berkeley (Self-study): CS61B Data Structures</li>
+                    </ul>
+                    <h3>Career Goals</h3>
+                    <p>To pursue advanced studies and contribute to cutting-edge AI and HCI research, developing technologies that meaningfully improve lives.</p>
+                </aside>
+            </div>
         </section>
 
         <section id="research" class="section">
-            <h2>Research / Publications</h2>
-            
-            <h3>Awaiting Publication Results</h3>
-            <div class="publication" id="research-M3RNet">
-                <span class="title">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers on Physiological, Behavioral, and Video Modalities</span>
-                <span class="authors">Wu, T., Huang, Y., & Purwanto, E.</span>
-                <span class="venue">Submitted to: International Conference on Computer Vision (ICCV 2025)</span>
-                <p class="small-text">Role: First Author</p>
-                <p class="abstract">M3RNet advances multimodal emotion recognition by integrating a memory-augmented transformer, the Memory Stream, to improve long-term feature retention. This system, utilizing the TMBL framework, enables sophisticated multimodal fusion that boosts accuracy across datasets like PPB-Emo and CL-Drive. Introduced M3RNet, featuring the Memory Stream, to enhance the transformer's ability to maintain long-term feature memory. Enhanced accuracy and stability across diverse emotional datasets. Implemented TMBL to fuse physiological and video data, boosting effectiveness in managing cross-modal interactions. Achieved over 9.15% improvement in accuracy on the PPB-Emo dataset and surpassed baseline models by 10.09% on the CL-Drive dataset.</p>
-            </div>
-            <div class="publication">
-                <span class="title">Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition with Periodicity and Contextual Attention</span>
-                <span class="authors">Purwanto, E., Wu, T., & Huang, Y.</span>
-                <span class="venue">Submitted to: IEEE Transactions on Affective Computing</span>
-            </div>
-
-            <h3>Published</h3>
-            <div class="publication" id="research-EmoMA-Net">
-                <span class="title">EmoMA-Net: A Novel Model for Emotion Recognition Using Hybrid Multimodal Neural Networks in Adaptive Educational Systems</span>
-                <span class="authors">Wu, T., Huang, Y., Craig, P., & Purwanto, E. (2024)</span>
-                <span class="venue">In Proceedings of The 7th International Conference on Big Data and Education (ICBDE 2024), Paper No. CD1068, September 24-26, 2024, Trinity College, University of Oxford, UK.</span>
-                <p class="small-text">Role: First Author</p>
-                <p class="abstract">Developed EmoMA-Net, a novel multimodal neural network for real-time emotion recognition in educational settings. Utilizes physiological data to enhance adaptive learning by providing feedback on student stress levels. Designed framework integrating LSTM and CNNs. Incorporated Convolutional Block Attention Module (CBAM) for optimized feature extraction. Utilized LSTM for enhanced temporal analysis. Achieved up to 99.66% prediction accuracy on the WESAD dataset.</p>
-                <p class="links">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=o00kcT4AAAAJ&citation_for_view=o00kcT4AAAAJ:u5HHmVD_uO8C" target="_blank">View on Google Scholar <span class="external-link-icon"></span></a>
-                </p>
-            </div>
-            <div class="publication">
-                <span class="title">Enhancing Multilingual Emotion Classification with Attention Mechanism for Transnational Education</span>
-                <span class="authors">Wu, T., Huang, Y., Purwanto, E., Juwono, F., & Tang, F. (2025)</span>
-                <span class="venue">In Proceedings of the 2025 International Conference on Artificial Intelligence and Education (ICAIE 2025), May 14-16, 2025, Suzhou, China.</span>
+            <h2 class="section-title">Research & Publications</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="title">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers on Physiological, Behavioral, and Video Modalities</span>
+                    <span class="authors">Wu, T., Huang, Y., & Purwanto, E.</span>
+                    <span class="venue">Status: Submitted to International Conference on Computer Vision (ICCV 2025)</span>
+                    <p class="role mb-1">Role: First Author</p>
+                    <p class="abstract">M3RNet advances multimodal emotion recognition by integrating a memory-augmented transformer (Memory Stream) to improve long-term feature retention. Utilizing the TMBL framework, it boosts accuracy on datasets like PPB-Emo (9.15% improvement) and CL-Drive (10.09% over baselines).</p>
+                </div>
+                <div class="card">
+                    <span class="title">EmoMA-Net: A Novel Model for Emotion Recognition Using Hybrid Multimodal Neural Networks in Adaptive Educational Systems</span>
+                    <span class="authors">Wu, T., Huang, Y., Craig, P., & Purwanto, E. (2024)</span>
+                    <span class="venue">Published: 7th Int. Conference on Big Data and Education (ICBDE 2024), Oxford, UK.</span>
+                     <p class="role mb-1">Role: First Author</p>
+                    <p class="abstract">Developed EmoMA-Net for real-time emotion recognition in education using physiological data. Integrates LSTMs, CNNs, and CBAM, achieving up to 99.66% accuracy on the WESAD dataset.</p>
+                    <p class="links">
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=o00kcT4AAAAJ&citation_for_view=o00kcT4AAAAJ:u5HHmVD_uO8C" target="_blank">Google Scholar <span class="external-link-icon"></span></a>
+                    </p>
+                </div>
+                 <div class="card">
+                    <span class="title">Enhancing Multilingual Emotion Classification with Attention Mechanism for Transnational Education</span>
+                    <span class="authors">Wu, T., Huang, Y., Purwanto, E., Juwono, F., & Tang, F. (2025)</span>
+                    <span class="venue">Published: Int. Conference on Artificial Intelligence and Education (ICAIE 2025), Suzhou, China.</span>
+                </div>
+                <div class="card">
+                    <span class="title">Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition with Periodicity and Contextual Attention</span>
+                    <span class="authors">Purwanto, E., Wu, T., & Huang, Y.</span>
+                    <span class="venue">Status: Submitted to IEEE Transactions on Affective Computing</span>
+                </div>
             </div>
         </section>
 
         <section id="projects" class="section">
-            <h2>Project Experience</h2>
-            <div class="project">
-                <span class="title">Daily Reading Tracker Design</span>
-                <span class="date">Timeline: Expected Apr. 2025</span>
-                <p class="role">Role: Developer</p>
-                <p class="description">Developed a secure and efficient reading tracker system with user authentication (registration, email verification, password encryption, JWT session management), role assignment, and password recovery. Enhanced reading log management with multi-criteria search. Built front end with HTML5, CSS3, JavaScript and back end with Spring Boot for CRUD APIs. Implemented front-end and back-end data validation. Modularized back-end services and used Spring Security. Conducted unit, integration (Mockito, Spring Boot Test), and load tests.</p>
-                <p>Technologies: <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JavaScript</span> <span class="tag">JWT</span> <span class="tag">Mockito</span></p>
-            </div>
-            <div class="project">
-                <span class="title">Kaggle - RSNA 2024 Lumbar Spine Degenerative Classification</span>
-                <span class="date">Timeline: Sept. 2024</span>
-                <p class="role">Role: Developer</p>
-                <p class="description">Developed a multi-stage deep learning model (ResNet-UNet) to detect and classify degenerative lumbar spine conditions from MRI images. Used PCA for feature extraction and dimensionality reduction; image preprocessing (histogram equalization, Gaussian filtering). Integrated ResNet (encoder) and UNet (decoder) with skip connections. Applied multi-task learning for severity prediction. Optimized with weighted binary cross-entropy loss, temperature scaling, and ensemble methods (soft voting).</p>
-                <p>Technologies: <span class="tag">Python</span> <span class="tag">Deep Learning</span> <span class="tag">ResNet</span> <span class="tag">UNet</span> <span class="tag">PCA</span></p>
-            </div>
-            <div class="project">
-                <span class="title">Student Data Analysis</span>
-                <span class="date">Timeline: Mar. 2024 - Jun. 2024</span>
-                <p class="role">Role: Analyst</p>
-                <p class="description">Performed preprocessing and PCA on student data. Classified student projects using decision trees, random forests, SVM, and Naive Bayes. Built an ensemble classifier. Fitted feature distributions using GMM, k-means, and hierarchical clustering.</p>
-                <p>Technologies: <span class="tag">Python</span> <span class="tag">Scikit-learn</span> <span class="tag">PCA</span> <span class="tag">Classification</span> <span class="tag">Clustering</span></p>
-            </div>
-             <div class="project">
-                <span class="title">Regression Analysis and Deep Learning Applications</span>
-                <span class="date">Timeline: Jan. 2024 - May 2024</span>
-                <p class="role">Role: Developer</p>
-                <p class="description">Implemented regression algorithms and multivariate models. Optimized linear/logistic regression with gradient descent. Utilized CNNs and MLPs for MNIST classification. Developed RNN models (PyTorch) for text classification, optimized with SGD and NLLLoss. Built sequence-to-sequence models and a CNN for image classification on MNIST, improved with data augmentation and regularization. Designed model saving/loading functionalities.</p>
-                <p>Technologies: <span class="tag">Python</span> <span class="tag">PyTorch</span> <span class="tag">CNN</span> <span class="tag">MLP</span> <span class="tag">RNN</span> <span class="tag">Regression</span></p>
-            </div>
-            <div class="project">
-                <span class="title">Summer Undergraduate Research Fellow, MetaTeddy: Interactive Reality Modeling Interface for 3D Freeform Design</span>
-                <span class="date">Timeline: Jun. 2023 - Sept. 2023</span>
-                <p class="role">Role: Research Fellow</p>
-                <p class="description">Gathered literature for implementation principles. Developed a 2D interactive interface using Unity (Teddy system framework). Implemented cutting operations (CGAL) and enhanced model manipulation (TouchScript). Integrated XR technologies (Microsoft Hololens 2). Combined Meta Teddy with AR headsets via Unity and AR Foundation. Used Node.js with Socket.io for network connections between server and AR glasses.</p>
-                <p>Technologies: <span class="tag">Unity</span> <span class="tag">CGAL</span> <span class="tag">Hololens 2</span> <span class="tag">AR</span> <span class="tag">Node.js</span> <span class="tag">XR</span></p>
+            <h2 class="section-title">Project Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="title">Reading Log Management and Analysis System</span>
+                    <span class="date">Timeline: Expected Apr. 2025</span>
+                    <p class="role">Role: Developer</p>
+                    <div class="description">
+                        <ul>
+                            <li>Developed a secure, efficient reading log tracking system with a user authentication module, covering user registration, email verification, password encryption, JWT-based session management, role assignment, and password recovery.</li>
+                            <li>Enhanced reading record management with multi-criteria search and filtering; utilized HTML5, CSS3, JavaScript for dynamic frontend, and Spring Boot for efficient backend CRUD APIs, with dual front-end/back-end data validation.</li>
+                            <li>Modularized backend services with a clear hierarchical structure and implemented Spring Security for global security filtering and operational rights management.</li>
+                            <li>Designed and executed comprehensive unit and integration tests (Mockito, Spring Boot Test) for core functionalities and exception scenarios; conducted load testing for system stability under high concurrency.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JavaScript</span> <span class="tag">JWT</span> <span class="tag">Mockito</span>
+                    </div>
+                    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+                </div>
+                
+                <div class="card">
+                    <span class="title">Kaggle - RSNA 2024 Lumbar Spine Degenerative Classification</span>
+                    <span class="date">Timeline: Sept. 2024</span>
+                    <p class="role">Role: Developer</p>
+                    <div class="description">
+                        <ul>
+                            <li>Developed a multi-stage ResNet-UNet deep learning model for detecting and classifying lumbar spine degenerative conditions from MRI images, enhancing diagnostic precision. Utilized PCA for feature extraction and methods like histogram equalization and Gaussian filtering for high-quality image preprocessing.</li>
+                            <li>Constructed a complex model using ResNet as an encoder for deep features and multi-scale context, and UNet for decoding with symmetrical skip connections to preserve high-resolution features. Integrated multi-task learning at the classifier head for predicting severity levels of various spinal conditions.</li>
+                            <li>Addressed class imbalance with weighted binary cross-entropy loss, improved prediction probability stability using temperature scaling and post-processing, and enhanced inference robustness through ensemble methods and soft voting.</li>
+                        </ul>
+                    </div>
+                     <div class="technologies">
+                        <span class="tag">Python</span> <span class="tag">Deep Learning</span> <span class="tag">ResNet-UNet</span> <span class="tag">PCA</span> <span class="tag">MRI Analysis</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="title">Machine Learning Data Analysis of Student Examination Status</span>
+                    <span class="date">Timeline: Mar. 2024 - Jun. 2024</span>
+                    <p class="role">Role: Analyst</p>
+                    <div class="description">
+                        <ul>
+                            <li>Performed preprocessing on student data and used PCA for feature extraction and dimensionality reduction, analyzing feature contribution in project classification and impact on model performance.</li>
+                            <li>Classified student projects using decision trees, random forests, SVM, and Naive Bayes algorithms, compared their performance, and built an ensemble classifier to compare feature selection methods.</li>
+                            <li>Fitted feature distributions using GMM, k-means, and hierarchical clustering algorithms to find methods reflecting project information distribution and assessed clustering results' association with student projects.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">Python</span> <span class="tag">Scikit-learn</span> <span class="tag">PCA</span> <span class="tag">Classification</span> <span class="tag">Clustering</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="title">Machine Learning and Deep Learning Practice Project Collection: Regression Analysis and Deep Learning Applications</span>
+                    <span class="date">Timeline: Jan. 2024 - May 2024</span>
+                     <p class="role">Role: Developer</p>
+                    <div class="description">
+                        <ul>
+                            <li>Implemented regression algorithms and multivariate models, optimizing linear and logistic regression with gradient descent, and utilized data visualization for model parameter tuning.</li>
+                            <li>Used CNNs and MLPs for MNIST dataset classification, developed RNN models with PyTorch for text classification, optimizing with SGD and NLLLoss.</li>
+                            <li>Constructed sequence-to-sequence models for translation accuracy assessment, developed a CNN for MNIST image classification with data augmentation and regularization, and implemented model saving/loading functionalities.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">Python</span> <span class="tag">PyTorch</span> <span class="tag">CNN</span> <span class="tag">MLP</span> <span class="tag">RNN</span> <span class="tag">Regression</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="title">MetaTeddy: Interactive Reality Modeling Interface for 3D Freeform Design</span>
+                    <span class="date">Timeline: Jun. 2023 - Sept. 2023</span>
+                    <p class="role">Role: Summer Undergraduate Research Fellow</p>
+                    <div class="description">
+                        <ul>
+                            <li>Gathered literature and technical information from Google Scholar, IEEE Xplore, and ACM Digital Library to support project implementation and innovation.</li>
+                            <li>Developed a 2D interactive interface based on the Teddy system framework using Unity, implementing precise cutting with CGAL and partitioning algorithms, and enhancing model rotation usability with the TouchScript plugin.</li>
+                            <li>Integrated XR technologies, combining MetaTeddy with Microsoft HoloLens 2 via Unity and AR Foundation for 2D to 3D model visualization, using Node.js and Socket.io for server-AR device communication.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">Unity</span> <span class="tag">CGAL</span> <span class="tag">Hololens 2</span> <span class="tag">AR</span> <span class="tag">Node.js</span> <span class="tag">XR</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="section">
-            <h2>Skills</h2>
-            <h3>Programming Languages & Tools</h3>
-            <p>
+            <h2 class="section-title">Core Competencies</h2>
+             <h3>Programming & Tools</h3>
+            <p class="text-center mb-3">
                 <span class="tag">Python (Pandas, Numpy, Scikit-learn, TensorFlow, PyTorch, pytest)</span>
                 <span class="tag">Java (JUnit, Spring Boot)</span>
                 <span class="tag">SQL (MySQL, Snowflake)</span>
-                <span class="tag">R</span> <span class="tag">Matlab</span> <span class="tag">Git</span>
+                <span class="tag">R</span> <span class="tag">Matlab</span> <span class="tag">Git & GitHub</span>
             </p>
             <h3>Technical Domains</h3>
-            <p>
+            <p class="text-center mb-3">
                 <span class="tag">Machine Learning</span> <span class="tag">Deep Learning</span>
                 <span class="tag">Data Analysis & Visualization</span> <span class="tag">Software Engineering</span>
                 <span class="tag">Computer Vision</span> <span class="tag">Multimodal Learning</span>
                 <span class="tag">Full-Stack Development</span> <span class="tag">XR Development</span>
             </p>
-            <h3>Languages</h3>
-            <p>
-                <span class="tag">Chinese (Native)</span>
-                <span class="tag">English (Fluent)</span>
-            </p>
         </section>
 
-        <section id="cv" class="section">
-            <h2>CV / Resume</h2>
-            <p class="cv-link">
-                <a href="Tianyi Wu CV 5.6.pdf" target="_blank">Download My CV (PDF) <span class="external-link-icon"></span></a>
-            </p>
-            <p style="font-size:0.9em; color:#777;">(Ensure the CV file "Tianyi Wu CV 5.6.pdf" is in the same directory as this HTML file, or update the link path.)</p>
+        <section id="contact" class="section text-center">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="mb-2" style="font-size: 1.1em;">I'm always open to discussing new projects, research collaborations, or opportunities.</p>
+            <p class="mb-1"><strong>Email:</strong> <a href="mailto:18895396922@163.com" style="color:var(--accent-color); font-weight:600;">18895396922@163.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/EthanTianyiWu" target="_blank" style="color:var(--accent-color); font-weight:600;">github.com/EthanTianyiWu <span class="external-link-icon"></span></a></p>
         </section>
+    </main>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:18895396922@163.com">18895396922@163.com</a></p>
-            <p>GitHub: <a href="https://github.com/EthanTianyiWu" target="_blank">github.com/EthanTianyiWu <span class="external-link-icon"></span></a></p>
-            </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Tianyi Wu. All rights reserved.</p>
-        <p>Webpage content based on provided CV and design proposal.</p>
+    <footer class="footer">
+        <p>&copy; 2024 Ethan Tianyi Wu. All Rights Reserved.</p>
+        <p>Designed with a focus on clarity and modern aesthetics.</p>
     </footer>
 
 </body>
