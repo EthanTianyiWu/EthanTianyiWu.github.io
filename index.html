@@ -3,109 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Tianyi Wu - Personal Academic Page</title>
+    <title>Tianyi Wu (Ethan) - Personal Academic Page</title>
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7; /* Increased for better readability */
             margin: 0;
             padding: 0;
             background-color: #F5F5F5;
             color: #333333;
+            padding-top: 50px; /* Add padding to body top to offset fixed nav */
         }
         header {
             background-color: #005A9C; /* Prussian Blue */
             color: #FFFFFF;
-            padding: 1rem 0;
+            padding: 2rem 1rem; /* Adjusted padding */
             text-align: center;
+        }
+        header h1 {
+            margin-bottom: 0.5rem;
+            color: #FFFFFF; /* Ensure header h1 is white */
+        }
+        header p {
+            font-size: 1.1em; /* Slightly larger subtitle */
+            margin-bottom: 0.5rem;
+            opacity: 0.9; /* Subtler subtitle text */
         }
         nav {
             background-color: #333333;
             color: #FFFFFF;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0; /* Adjusted padding */
             text-align: center;
+            position: fixed; /* Sticky navigation */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure nav is above other content */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for sticky nav */
         }
         nav a {
             color: #FFFFFF;
-            margin: 0 15px;
+            margin: 0 18px; /* Slightly more margin */
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease; /* Smooth transition */
         }
-        nav a:hover {
+        nav a:hover, nav a.active { /* Added .active for potential future JS use */
             color: #00BFFF; /* Deep Sky Blue */
         }
         .container {
-            width: 80%;
-            margin: auto;
+            width: 85%; /* Slightly wider */
+            max-width: 1200px; /* Max width for large screens */
+            margin: 20px auto; /* Keep margin for spacing from nav */
             overflow: hidden;
-            padding: 20px;
+            padding: 25px; /* Increased padding */
             background-color: #FFFFFF;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* Softer, more diffused shadow */
+            border-radius: 8px; /* Added subtle border radius */
         }
         h1, h2, h3 {
             color: #005A9C; /* Prussian Blue */
             font-family: 'Montserrat', sans-serif;
         }
+        h2 {
+            border-bottom: 2px solid #005A9C; /* Emphasize section titles */
+            padding-bottom: 10px;
+            margin-top: 1.5em; /* More space above section titles */
+            margin-bottom: 1.2em;
+        }
+        h3 {
+            margin-top: 1.2em;
+            margin-bottom: 0.8em;
+            color: #004B80; /* Slightly darker shade for H3 */
+        }
         .section {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #EAEAEA;
+            margin-bottom: 30px; /* Increased spacing */
+            padding-bottom: 25px; /* Increased spacing */
+            border-bottom: 1px solid #E0E0E0; /* Lighter border */
         }
         .section:last-child {
             border-bottom: none;
         }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px; /* Slightly larger */
+            height: 160px;
             border-radius: 50%;
             display: block;
-            margin: 20px auto;
-            border: 3px solid #005A9C;
+            margin: 25px auto; /* Adjusted margin */
+            border: 4px solid #005A9C; /* Slightly thicker border */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Added subtle shadow */
         }
         .publication, .project {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #E0E0E0;
-            border-radius: 5px;
+            margin-bottom: 20px; /* Increased spacing */
+            padding: 18px; /* Increased padding */
+            border: 1px solid #DDE2E6; /* Lighter, softer border */
+            border-radius: 6px; /* Consistent border radius */
+            background-color: #FCFCFC; /* Very light background for cards */
+            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+        }
+        .publication:hover, .project:hover {
+            box-shadow: 0 5px 15px rgba(0, 90, 156, 0.15); /* More prominent shadow on hover */
+            transform: translateY(-3px); /* Slight lift effect */
         }
         .publication strong, .project strong {
-            font-size: 1.1em;
+            font-size: 1.15em; /* Slightly larger */
             color: #005A9C;
+            display: block; /* Make strong take full width */
+            margin-bottom: 5px; /* Space after title */
+        }
+        .publication em, .project em { /* Style for author/venue lines */
+            font-style: italic;
+            color: #555555;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .publication p, .project p {
+            margin-bottom: 10px;
+        }
+        .publication p:last-child, .project p:last-child {
+            margin-bottom: 0;
         }
         .tag {
             display: inline-block;
             background-color: #00BFFF; /* Deep Sky Blue */
             color: white;
-            padding: 2px 8px;
-            margin: 2px;
-            border-radius: 3px;
-            font-size: 0.9em;
+            padding: 4px 10px; /* Adjusted padding */
+            margin: 3px; /* Adjusted margin */
+            border-radius: 4px; /* Consistent border radius */
+            font-size: 0.85em; /* Slightly smaller for better fit */
+            font-weight: bold;
         }
         .cv-link a {
             display: inline-block;
             background-color: #4DB870; /* Accent Green */
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px; /* Increased padding */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .cv-link a:hover {
             background-color: #3a8f5a;
+            transform: translateY(-2px);
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #333333;
-            color: #FFFFFF;
-            margin-top: 20px;
+            padding: 25px; /* Increased padding */
+            background-color: #2B2B2B; /* Darker footer */
+            color: #BBBBBB; /* Lighter text for footer */
+            margin-top: 30px; /* Increased spacing */
+            font-size: 0.9em;
+        }
+        footer p {
+            margin: 5px 0;
         }
         ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: disc; /* Changed to circle for a lighter look */
+            padding-left: 25px; /* Adjusted padding */
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px; /* Increased spacing */
+        }
+        /* Citation styling (optional, if you want to make them less prominent) */
+        [cite] {
+            font-size: 0.8em;
+            color: #777;
+            vertical-align: super;
+            margin-left: 2px;
+            text-decoration: none;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -155,7 +221,7 @@
             <h2>About Me</h2>
             <h3>Educational Background</h3>
             <p><strong>Xi'an Jiaotong-Liverpool University (XJTLU), Suzhou, China</strong><br>
-                Bachelor's in Information and Computing Science (Sept. 2022 - Jul. 2026 (Expected)) [cite: 1, 2]<br>
+                <em>Bachelor's in Information and Computing Science (Sept. 2022 - Jul. 2026 (Expected)) [cite: 1, 2]</em><br>
                 GPA: 4.0/4.0 [cite: 3]<br>
                 Honors: 2023-2024 Xi'an Jiaotong-Liverpool University Undergraduate Academic Scholarship (Top 10%) [cite: 3]
             </p>
@@ -183,28 +249,28 @@
             <div class="publication" id="research-M3RNet">
                 <p><strong>M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers on Physiological, Behavioral, and Video Modalities</strong> [cite: 5, 6]<br>
                 <em>Wu, T., Huang, Y., & Purwanto, E.</em><br>
-                Submitted to: International Conference on Computer Vision (ICCV 2025) [cite: 5]<br>
+                <em>Submitted to: International Conference on Computer Vision (ICCV 2025) [cite: 5]</em><br>
                 Role: First Author [cite: 6]<br>
                 Abstract: M3RNet advances multimodal emotion recognition by integrating a memory-augmented transformer, the Memory Stream, to improve long-term feature retention. [cite: 6] This system, utilizing the TMBL framework, enables sophisticated multimodal fusion that boosts accuracy across datasets like PPB-Emo and CL-Drive. [cite: 7] Introduced M3RNet, featuring the Memory Stream, to enhance the transformer's ability to maintain long-term feature memory. [cite: 8] Enhanced accuracy and stability across diverse emotional datasets. [cite: 9] Implemented TMBL to fuse physiological and video data, boosting effectiveness in managing cross-modal interactions. [cite: 10] Achieved over 9.15% improvement in accuracy on the PPB-Emo dataset and surpassed baseline models by 10.09% on the CL-Drive dataset. [cite: 11]</p>
                 </div>
             <div class="publication">
                 <p><strong>Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition with Periodicity and Contextual Attention</strong> [cite: 5]<br>
                 <em>Purwanto, E., Wu, T., & Huang, Y.</em><br>
-                Submitted to: IEEE Transactions on Affective Computing [cite: 5]</p>
+                <em>Submitted to: IEEE Transactions on Affective Computing [cite: 5]</em></p>
             </div>
 
             <h3>Published</h3>
             <div class="publication" id="research-EmoMA-Net">
                 <p><strong>EmoMA-Net: A Novel Model for Emotion Recognition Using Hybrid Multimodal Neural Networks in Adaptive Educational Systems</strong> [cite: 5, 12]<br>
                 <em>Wu, T., Huang, Y., Craig, P., & Purwanto, E. (2024)</em><br>
-                Venue: In Proceedings of The 7th International Conference on Big Data and Education (ICBDE 2024), Paper No. CD1068, September 24-26, 2024, Trinity College, University of Oxford, UK. [cite: 5]<br>
+                <em>Venue: In Proceedings of The 7th International Conference on Big Data and Education (ICBDE 2024), Paper No. CD1068, September 24-26, 2024, Trinity College, University of Oxford, UK. [cite: 5]</em><br>
                 Role: First Author [cite: 12]<br>
                 Abstract: Developed EmoMA-Net, a novel multimodal neural network for real-time emotion recognition in educational settings. [cite: 12] Utilizes physiological data to enhance adaptive learning by providing feedback on student stress levels. [cite: 13] Designed framework integrating LSTM and CNNs. [cite: 14] Incorporated Convolutional Block Attention Module (CBAM) for optimized feature extraction. [cite: 15, 16] Utilized LSTM for enhanced temporal analysis. [cite: 17] Achieved up to 99.66% prediction accuracy on the WESAD dataset. [cite: 18]</p>
                 </div>
             <div class="publication">
                 <p><strong>Enhancing Multilingual Emotion Classification with Attention Mechanism for Transnational Education</strong> [cite: 5]<br>
                 <em>Wu, T., Huang, Y., Purwanto, E., Juwono, F., & Tang, F. (2025)</em><br>
-                Venue: In Proceedings of the 2025 International Conference on Artificial Intelligence and Education (ICAIE 2025), May 14-16, 2025, Suzhou, China. [cite: 5]</p>
+                <em>Venue: In Proceedings of the 2025 International Conference on Artificial Intelligence and Education (ICAIE 2025), May 14-16, 2025, Suzhou, China. [cite: 5]</em></p>
             </div>
         </section>
 
