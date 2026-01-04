@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tianyi Wu (Ethan) - Academic Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,9 +14,9 @@
             --primary-color: #0F2C59; /* Deep Academic Blue */
             --accent-color: #D95F16; /* Creative Orange */
             --text-primary: #333333;
-            --text-secondary: #666666;
+            --text-secondary: #555555;
             --border-color: #E5E5E5;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
@@ -44,6 +44,13 @@
             align-items: center;
         }
 
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
         .nav-links a {
             text-decoration: none;
             color: var(--primary-color);
@@ -68,6 +75,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            margin-left: 20px;
         }
 
         .lang-btn:hover {
@@ -105,6 +113,7 @@
             color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto 2rem;
+            font-weight: 300;
         }
 
         .btn-cta {
@@ -145,9 +154,10 @@
             position: absolute;
             bottom: -10px;
             left: 0;
-            width: 40px;
-            height: 3px;
+            width: 50px;
+            height: 4px;
             background-color: var(--accent-color);
+            border-radius: 2px;
         }
 
         /* --- Cards --- */
@@ -170,7 +180,7 @@
         .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow);
-            border-color: rgba(217, 95, 22, 0.2);
+            border-color: rgba(217, 95, 22, 0.3);
         }
 
         .card-header {
@@ -182,7 +192,7 @@
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         .meta-info {
@@ -195,12 +205,15 @@
 
         .highlight-role {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--accent-color);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.8rem;
+            background: rgba(217, 95, 22, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
         }
 
         .card-body {
@@ -211,11 +224,11 @@
 
         .card-body ul {
             padding-left: 1.2rem;
-            margin-top: 0.5rem;
+            margin-top: 0.8rem;
         }
 
         .card-body li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .tags-container {
@@ -228,33 +241,49 @@
         .tag {
             background-color: #F0F4F8;
             color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
+            padding: 0.3rem 0.7rem;
             border-radius: 6px;
             font-size: 0.8rem;
             font-weight: 600;
         }
 
         .doi-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-top: 0.5rem;
             font-size: 0.85rem;
             color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 1px dotted var(--accent-color);
+            font-weight: 600;
+            transition: opacity 0.2s;
         }
+        
+        .doi-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .doi-link i { margin-left: 5px; font-size: 0.8em; }
 
         /* --- About Section --- */
         .about-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 3rem;
+            align-items: start;
         }
         
         .fact-box {
             background: #F8F9FA;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .fact-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         /* --- Footer --- */
@@ -263,10 +292,11 @@
             padding: 3rem;
             background-color: var(--primary-color);
             color: rgba(255,255,255,0.7);
-            margin-top: 4rem;
+            margin-top: 6rem;
         }
         
-        footer a { color: white; }
+        footer a { color: white; transition: 0.3s; }
+        footer a:hover { color: var(--accent-color); }
 
         /* --- Bilingual Utility Classes --- */
         .lang-zh { display: none; } /* Default hidden */
@@ -274,7 +304,7 @@
         /* Mobile Nav */
         @media (max-width: 768px) {
             .navbar { padding: 1rem; }
-            .nav-links { display: none; } /* Simplified for demo */
+            .nav-links { display: none; } 
             .hero h1 { font-size: 2.2rem; }
             .about-layout { grid-template-columns: 1fr; }
         }
@@ -283,9 +313,9 @@
 <body>
 
     <nav class="navbar">
-        <div style="font-weight: 700; font-size: 1.2rem; color: var(--primary-color);">Ethan Wu</div>
+        <div class="nav-brand">Ethan Wu</div>
         <div style="display: flex; align-items: center;">
-            <div class="nav-links" style="display: flex; margin-right: 20px;">
+            <div class="nav-links" style="display: flex;">
                 <a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a>
                 <a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">科研</a>
                 <a href="#internships" class="lang-en">Experience</a><a href="#internships" class="lang-zh">经历</a>
@@ -302,13 +332,13 @@
         
         <div class="lang-en">
             <h1>Tianyi Wu</h1>
-            <p class="subtitle">Undergraduate Researcher in Information & Computing Science<br>Focusing on Multimodal Emotion Recognition, Deep Learning & AI in Biomedicine.</p>
+            <p class="subtitle">Information & Computing Science Undergraduate at XJTLU<br>Specializing in Multimodal Emotion Recognition, Deep Learning & Clinical AI.</p>
             <a href="assets/CV_12.4.pdf" target="_blank" class="btn-cta"><i class="fas fa-file-download"></i> Download CV</a>
         </div>
 
         <div class="lang-zh">
             <h1>吴天一</h1>
-            <p class="subtitle">西交利物浦大学 · 信息与计算科学<br>研究方向：多模态情感计算、深度学习及生物医学AI应用</p>
+            <p class="subtitle">西交利物浦大学 · 信息与计算科学<br>主攻：多模态情感计算、深度学习架构及生物医学 AI 应用</p>
             <a href="assets/CV_12.4.pdf" target="_blank" class="btn-cta"><i class="fas fa-file-download"></i> 下载简历</a>
         </div>
     </header>
@@ -323,32 +353,162 @@
             <div class="about-layout">
                 <div>
                     <div class="lang-en">
-                        <p style="margin-bottom: 1rem;">I am an undergraduate student at <strong>Xi'an Jiaotong-Liverpool University (XJTLU)</strong>, maintaining a <strong>GPA of 3.78/4.0</strong> (Top 10%). My academic journey is driven by a passion for solving complex problems in affective computing and clinical prediction using advanced AI architectures.</p>
-                        <p>I have been recognized with the 2025 National Encouragement Scholarship. Beyond research, I am a Level 10 Pianist and a Level 4 Street Dancer, believing that creativity in arts fuels innovation in science.</p>
+                        <p style="margin-bottom: 1rem;">I am an undergraduate student at <strong>Xi'an Jiaotong-Liverpool University (XJTLU)</strong>, majoring in Information and Computing Science (Class of 2026). I maintain a strong academic record with a <strong>GPA of 3.78/4.0</strong>, ranking in the top 10% of my cohort[cite: 5, 6, 7].</p>
+                        <p style="margin-bottom: 1rem;">My research passion lies in developing reliable AI systems for healthcare and education. I specialize in designing <strong>multimodal neural networks</strong> and <strong>memory-augmented transformers</strong> to capture subtle emotional cues and predict clinical events. I am proficient in Python (PyTorch, TensorFlow) and Java, with fluent English (TOEFL 107) and native Chinese language skills[cite: 126, 127].</p>
+                        <p>Beyond the lab, I am an accomplished pianist (Level 10 certification) and street dancer (Level 4), believing that the discipline and creativity of art profoundly benefit scientific innovation[cite: 128].</p>
                     </div>
                     <div class="lang-zh">
-                        <p style="margin-bottom: 1rem;">我是西交利物浦大学（XJTLU）信息与计算科学专业的本科生，预计于2026年7月毕业。在校期间保持 **GPA 3.78/4.0**（前10%），致力于利用先进的人工智能架构解决情感计算和临床预测中的复杂问题。</p>
-                        <p>曾获2025年国家励志奖学金。科研之外，我拥有上海音乐学院钢琴十级及中国街舞协会街舞四级证书。我相信艺术中的创造力能为科学创新提供源源不断的灵感。</p>
+                        <p style="margin-bottom: 1rem;">我是西交利物浦大学（XJTLU）信息与计算科学专业的本科生（2026届）。在校期间，我保持了优异的学术成绩，<strong>GPA 3.78/4.0</strong>，位列专业前10% [cite: 5, 6, 7]。</p>
+                        <p style="margin-bottom: 1rem;">我的研究热情致力于为医疗和教育领域开发可靠的人工智能系统。我擅长设计<strong>多模态神经网络</strong>和<strong>记忆增强型 Transformer</strong>，以精准捕捉细微的情感线索并进行临床事件预测。在技术栈方面，我精通 Python (PyTorch, TensorFlow) 和 Java，并具备流利的英语沟通能力（TOEFL 107）[cite: 126, 127]。</p>
+                        <p>科研之外，我拥有上海音乐学院钢琴十级及中国街舞协会街舞四级证书。我相信，艺术中严谨与自由并存的特质，能为科学创新提供独特的视角与灵感 [cite: 128]。</p>
                     </div>
                 </div>
                 
                 <div class="fact-box">
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-graduation-cap" style="color:var(--accent-color); width:20px;"></i> 
-                            <span class="lang-en">B.Sc. Info & Comp Sci (Expected 2026)</span>
-                            <span class="lang-zh">信息与计算科学理学士 (2026届)</span>
+                    <h3 class="lang-en">Quick Facts</h3><h3 class="lang-zh">概览</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><i class="fas fa-university" style="color:var(--accent-color); width:20px;"></i> XJTLU (Suzhou, China)</li>
+                        <li><i class="fas fa-graduation-cap" style="color:var(--accent-color); width:20px;"></i> 
+                            <span class="lang-en">B.Sc. Info & Comp Sci ('26)</span>
+                            <span class="lang-zh">信息与计算科学理学士 ('26)</span>
                         </li>
-                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-star" style="color:var(--accent-color); width:20px;"></i> 
-                            <span class="lang-en">Nat. Encouragement Scholarship '25</span>
-                            <span class="lang-zh">2025 国家励志奖学金</span>
+                        <li><i class="fas fa-chart-line" style="color:var(--accent-color); width:20px;"></i> 
+                            <span class="lang-en">GPA: 3.78/4.0 (Top 10%)</span>
+                            <span class="lang-zh">GPA: 3.78/4.0 (前 10%)</span>
                         </li>
-                        <li><i class="fas fa-map-marker-alt" style="color:var(--accent-color); width:20px;"></i> Suzhou, China</li>
+                        <li><i class="fas fa-award" style="color:var(--accent-color); width:20px;"></i> 
+                            <span class="lang-en">2023-24 Academic Scholarship</span>
+                            <span class="lang-zh">2023-24 学术奖学金</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="internships" style="margin-top: 4rem;">
+        <section id="research" style="margin-top: 5rem;">
+            <h2 class="section-title">
+                <span class="lang-en">Selected Publications & Research</span>
+                <span class="lang-zh">代表性论文与研究</span>
+            </h2>
+            
+            <div class="grid">
+                
+                <div class="card" style="border-left: 5px solid var(--accent-color);">
+                    <div class="card-header">
+                        <div class="highlight-role">First Author | IEEE TAFFC (Published)</div>
+                        <div class="card-title">Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition</div>
+                        <span class="meta-info">Wu, T., Purwanto, E., & Huang, Y. (2025)</span>
+                        <a href="https://doi.org/10.1109/TAFFC.2025.3609046" target="_blank" class="doi-link">DOI: 10.1109/TAFFC.2025.3609046 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-en">
+                            Addressed the limitation of capturing subtle emotional cues by designing a memory stream module to preserve long-term context. Incorporated a Fourier-based periodicity modeling module for physiological rhythms. The model achieved <strong>13.75% improvement</strong> over standard transformers[cite: 19, 20, 75].
+                        </div>
+                        <div class="lang-zh">
+                            针对捕捉细微情感线索的难题，创新性设计了 memory stream（记忆流）模块以保留长时上下文。结合傅里叶周期性建模处理生理节律，该模型在WESAD和CL-Drive数据集上较标准Transformer提升了 <strong>13.75%</strong> 的性能 [cite: 19, 20, 75]。
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">Memory Stream</span>
+                            <span class="tag">Fourier Analysis</span>
+                            <span class="tag">Transformer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="highlight-role">Research Fellow | Shenzhen Research Inst. of Big Data</div>
+                        <div class="card-title">
+                            <span class="lang-en">Multimodal Temporal Point Process Modeling for Clinical Event Prediction</span>
+                            <span class="lang-zh">基于多模态时间点过程的临床事件预测建模</span>
+                        </div>
+                        <span class="meta-info">Jun 2025 - Present</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-en">
+                            Constructed baseline (TPP-T) and fusion models (M-TPP) using the <strong>MIMIC-IV dataset</strong>. Innovatively encoded high-frequency vital signs with event embeddings into an RNN core. Conducted experiments on predicting hospital admission timing (regression) and clinical causes (classification)[cite: 56, 58, 60].
+                        </div>
+                        <div class="lang-zh">
+                            利用 <strong>MIMIC-IV 数据集</strong> 构建了基线（TPP-T）与多模态融合模型（M-TPP）。创新性地将高频生命体征与事件嵌入融合进RNN核心，用于预测入院时间点（回归任务）及临床病因（分类任务）[cite: 56, 58, 60]。
+                        </div>
+                        <div class="tags-container">
+                            <span class="tag">MIMIC-IV</span>
+                            <span class="tag">RNN</span>
+                            <span class="tag">Clinical Prediction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="highlight-role">First Author | ICAIE 2025 (Published)</div>
+                        <div class="card-title">Enhancing Multilingual Emotion Classification with Attention Mechanism</div>
+                        <span class="meta-info">Wu, T., et al. (2025)</span>
+                        <a href="https://doi.org/10.1109/ICAIE64856.2025.11158599" target="_blank" class="doi-link">DOI: 10.1109/ICAIE64856.2025.11158599 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-en">
+                            Proposed an enhanced XLM-ROBERTa framework integrating <strong>multi-head self-attention</strong> and <strong>LoRA</strong> for efficient fine-tuning. Achieved 0.87 accuracy on SemEval2018 Task 1, specifically addressing transnational education contexts[cite: 21, 22, 23].
+                        </div>
+                        <div class="lang-zh">
+                            提出增强型 XLM-ROBERTa 框架，集成<strong>多头自注意力机制</strong>与 <strong>LoRA</strong> 微调技术。在SemEval2018 Task 1上达到0.87准确率，显著提升了跨国教育场景下的多语言情感分类效果 [cite: 21, 22, 23]。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="highlight-role">First Author | ICBDE 2024 (Published)</div>
+                        <div class="card-title">EmoMA-Net: Hybrid Multimodal Neural Networks in Adaptive Educational Systems</div>
+                        <span class="meta-info">Wu, T., et al. (2024)</span>
+                        <a href="https://doi.org/10.1145/3704289.3704303" target="_blank" class="doi-link">DOI: 10.1145/3704289.3704303 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-en">
+                            Developed a hybrid model using LSTM and CNN enhanced with <strong>CBAM attention</strong>. This architecture effectively captures temporal-spatial physiological features, achieving <strong>99.66% accuracy</strong> on the WESAD dataset for real-time stress detection[cite: 28, 29, 82, 86].
+                        </div>
+                        <div class="lang-zh">
+                            开发了结合 LSTM 和 CNN 的混合模型，并引入 <strong>CBAM 注意力机制</strong>。该架构有效捕捉生理信号的时空特征，在 WESAD 数据集上实现了 <strong>99.66%</strong> 的准确率，支持实时压力检测 [cite: 28, 29, 82, 86]。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="highlight-role">Co-Author | J. Build. Eng. (Under Review)</div>
+                        <div class="card-title">Reliable ML Framework for Load Capacity Prediction of Steel Columns</div>
+                        <span class="meta-info">Oluwadahunsi, S., ... Wu, T., et al. (2025)</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-en">
+                            Contributed to the design of an interpretable ML framework using <strong>synthetic data augmentation</strong> and multi-objective optimization to predict load capacity of fully-encased steel columns[cite: 24, 25].
+                        </div>
+                        <div class="lang-zh">
+                            参与设计可解释性机器学习框架，利用<strong>合成数据增强</strong>与多目标优化技术，实现全包钢混凝土柱承载力的精准预测 [cite: 24, 25]。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="highlight-role">First Author | Submitted to CVPR 2026</div>
+                        <div class="card-title">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers</div>
+                        <span class="meta-info">Wu, T., Huang, Y., & Purwanto, E.</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-en">
+                            Built on the <strong>TMBL framework</strong> to fuse physiological and video data. M3RNet introduces a mechanism to enhance long-range dependency handling, achieving significant accuracy gains on PPB-Emo (+9.15%) and CL-Drive (+10.09%)[cite: 17, 68, 73, 74].
+                        </div>
+                        <div class="lang-zh">
+                            基于 <strong>TMBL 框架</strong> 深度融合生理与视频数据。M3RNet 引入新机制显著增强了长距离依赖处理能力，在 PPB-Emo (+9.15%) 与 CL-Drive (+10.09%) 数据集上均取得大幅精度提升 [cite: 17, 68, 73, 74]。
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="internships" style="margin-top: 5rem;">
             <h2 class="section-title">
                 <span class="lang-en">Internship Experience</span>
                 <span class="lang-zh">实习经历</span>
@@ -371,14 +531,14 @@
                     </div>
                     <div class="card-body">
                         <ul class="lang-en">
-                            <li>Contributed to JeecgBoot platform customization and bug fixing.</li>
-                            <li>Executed Nginx/Redis/MySQL deployment and CI/CD pipelines.</li>
-                            <li>Optimized AI Agent prompts and API efficiency.</li>
+                            <li><strong>Customization:</strong> Tailored the JeecgBoot platform and fixed critical bugs[cite: 37].</li>
+                            <li><strong>DevOps:</strong> Established CI/CD pipelines (GitLab) and automated deployment scripts for Nginx/Tomcat/Redis[cite: 38, 41].</li>
+                            <li><strong>AI Optimization:</strong> Enhanced AI Agent by optimizing prompt engineering and API logic, improving response accuracy[cite: 39].</li>
                         </ul>
                         <ul class="lang-zh">
-                            <li>参与JeecgBoot开源平台的定制化开发与Bug修复。</li>
-                            <li>负责Nginx、Redis、MySQL的环境配置及自动化部署。</li>
-                            <li>优化AI Agent的提示词工程与API调用逻辑，搭建CI/CD流水线。</li>
+                            <li><strong>定制开发：</strong> 负责 JeecgBoot 开源平台的模块定制与关键 Bug 修复 [cite: 37]。</li>
+                            <li><strong>运维部署：</strong> 搭建 GitLab CI/CD 流水线，编写 Nginx/Tomcat/Redis 的自动化部署脚本 [cite: 38, 41]。</li>
+                            <li><strong>AI 优化：</strong> 通过优化提示词工程（Prompt Engineering）和 API 逻辑，显著提升了 AI Agent 的响应准确率 [cite: 39]。</li>
                         </ul>
                     </div>
                 </div>
@@ -400,14 +560,14 @@
                     </div>
                     <div class="card-body">
                         <ul class="lang-en">
-                            <li>Built IoT energy dashboards using FastAPI and Pydantic.</li>
-                            <li>Deployed OLS models as RESTful APIs for energy forecasting.</li>
-                            <li>Developed component recognition with CLIP/DINO.</li>
+                            <li><strong>IoT Systems:</strong> Built energy dashboards using <strong>FastAPI</strong> and Pydantic, implementing time-of-use pricing logic[cite: 48, 49, 50].</li>
+                            <li><strong>Model Deployment:</strong> Deployed OLS models as RESTful APIs for energy forecasting and optimized high-concurrency SQL queries[cite: 51, 52].</li>
+                            <li><strong>Computer Vision:</strong> Developed a component recognition system using <strong>CLIP</strong> and <strong>DINO</strong> for low-data industrial scenarios[cite: 54].</li>
                         </ul>
                         <ul class="lang-zh">
-                            <li>基于FastAPI框架开发工业物联网（IoT）能耗看板。</li>
-                            <li>部署OLS模型API用于能耗预测，优化高并发SQL查询。</li>
-                            <li>利用CLIP和DINO模型开发汽车产线零部件识别系统。</li>
+                            <li><strong>物联网系统：</strong> 基于 <strong>FastAPI</strong> 和 Pydantic 开发能耗看板，实现了基于分时电价的计算引擎 [cite: 48, 49, 50]。</li>
+                            <li><strong>模型部署：</strong> 将 OLS 模型部署为 RESTful API 用于能耗趋势预测，并优化了高并发场景下的 SQL 查询 [cite: 51, 52]。</li>
+                            <li><strong>计算机视觉：</strong> 利用 <strong>CLIP</strong> 和 <strong>DINO</strong> 模型开发了小样本环境下的工业零部件识别系统 [cite: 54]。</li>
                         </ul>
                     </div>
                 </div>
@@ -426,139 +586,21 @@
                     </div>
                     <div class="card-body">
                         <ul class="lang-en">
-                            <li>Advanced multimodal emotion recognition via memory-augmented transformers.</li>
-                            <li>Designed <strong>Memory Stream</strong> component for long-term feature retention.</li>
-                            <li>Published/Submitted works: Phy-FusionNet & M3RNet.</li>
+                            <li><strong>Architecture Design:</strong> Designed a memory-augmented transformer to enhance long-term feature retention in multimodal data[cite: 65, 68].</li>
+                            <li><strong>Fusion Framework:</strong> Implemented <strong>TMBL</strong> (Transformer-based Multimodal Binding Learning) to fuse physiological and video modalities[cite: 73].</li>
+                            <li><strong>Achievement:</strong> First author of the published paper <strong>Phy-FusionNet</strong> (IEEE TAFFC)[cite: 20].</li>
                         </ul>
                         <ul class="lang-zh">
-                            <li>设计记忆增强型Transformer架构，推进多模态情感识别研究。</li>
-                            <li>创新性提出 <strong>Memory Stream</strong> 模块以增强长时特征记忆。</li>
-                            <li>产出成果：Phy-FusionNet (已发表) 与 M3RNet (在投)。</li>
+                            <li><strong>架构设计：</strong> 设计记忆增强型 Transformer 架构，解决了多模态数据中长时特征记忆的难题 [cite: 65, 68]。</li>
+                            <li><strong>融合框架：</strong> 实现 <strong>TMBL</strong>（基于 Transformer 的多模态绑定学习）框架，高效融合生理与视频数据 [cite: 73]。</li>
+                            <li><strong>产出成果：</strong> 作为第一作者发表论文 <strong>Phy-FusionNet</strong> (IEEE TAFFC) [cite: 20]。</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="research" style="margin-top: 4rem;">
-            <h2 class="section-title">
-                <span class="lang-en">Selected Publications & Research</span>
-                <span class="lang-zh">代表性论文与研究</span>
-            </h2>
-            
-            <div class="grid">
-                
-                <div class="card" style="border-left: 5px solid var(--accent-color);">
-                    <div class="card-header">
-                        <div class="highlight-role">First Author | IEEE TAFFC (Published)</div>
-                        <div class="card-title">Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition</div>
-                        <span class="meta-info">Wu, T., Purwanto, E., & Huang, Y. (2025)</span>
-                        <a href="#" class="doi-link">DOI: 10.1109/TAFFC.2025.xxxxxxx</a>
-                    </div>
-                    <div class="card-body">
-                        <div class="lang-en">
-                            Introduced a <strong>Memory Stream</strong> module to preserve long-term context and a Fourier-based periodicity module for physiological rhythms. Achieved +13.75% improvement over standard transformers on WESAD and CL-Drive datasets.
-                        </div>
-                        <div class="lang-zh">
-                            提出 <strong>Memory Stream (记忆流)</strong> 模块以保留长时上下文，并结合傅里叶周期性建模处理生理信号。在WESAD和CL-Drive数据集上较标准Transformer提升了13.75%的性能。
-                        </div>
-                        <div class="tags-container">
-                            <span class="tag">Memory Stream</span>
-                            <span class="tag">Transformer</span>
-                            <span class="tag">Multimodal</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="highlight-role">Research Fellow | Shenzhen Research Inst. of Big Data</div>
-                        <div class="card-title">
-                            <span class="lang-en">Multimodal Temporal Point Process Modeling for Clinical Event Prediction</span>
-                            <span class="lang-zh">基于多模态时间点过程的临床事件预测建模</span>
-                        </div>
-                        <span class="meta-info">Jun 2025 - Present</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="lang-en">
-                            Constructed M-TPP models using MIMIC-IV dataset. Fused high-frequency vital signs with event embeddings in an RNN core to predict hospital admission timing and clinical causes.
-                        </div>
-                        <div class="lang-zh">
-                            基于MIMIC-IV数据集构建M-TPP模型。将高频生命体征与事件嵌入融合进RNN核心，用于预测入院时间点（回归）及临床病因（分类）。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="highlight-role">First Author | ICAIE 2025 (Published)</div>
-                        <div class="card-title">Enhancing Multilingual Emotion Classification with Attention Mechanism</div>
-                        <span class="meta-info">Wu, T., et al. (2025)</span>
-                        <a href="#" class="doi-link">DOI: 10.1109/ICAIE.2025.xxxxxxx</a>
-                    </div>
-                    <div class="card-body">
-                        <div class="lang-en">
-                            Optimized XLM-ROBERTa with multi-head self-attention and LoRA for efficient fine-tuning in transnational education contexts.
-                        </div>
-                        <div class="lang-zh">
-                            结合多头自注意力机制与LoRA微调技术优化XLM-ROBERTa模型，提升了跨国教育场景下的多语言情感分类效果。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="highlight-role">First Author | ICBDE 2024 (Published)</div>
-                        <div class="card-title">EmoMA-Net: Hybrid Multimodal Neural Networks in Adaptive Educational Systems</div>
-                        <span class="meta-info">Wu, T., et al. (2024)</span>
-                        <a href="#" class="doi-link">DOI: 10.1145/ICBDE.2024.xxxxxxx</a>
-                    </div>
-                    <div class="card-body">
-                        <div class="lang-en">
-                            Integrated LSTM, CNN, and CBAM attention to capture temporal-spatial physiological features, achieving 99.66% accuracy on WESAD.
-                        </div>
-                        <div class="lang-zh">
-                            集成LSTM、CNN及CBAM注意力机制，有效捕捉生理信号的时空特征，在WESAD数据集上实现了99.66%的准确率。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="highlight-role">Co-Author | J. Build. Eng. (Under Review)</div>
-                        <div class="card-title">Reliable ML Framework for Load Capacity Prediction of Steel Columns</div>
-                        <span class="meta-info">Oluwadahunsi, S., ... Wu, T., et al. (2025)</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="lang-en">
-                            Contributed to the ML framework design using synthetic data augmentation and multi-objective optimization for structural engineering.
-                        </div>
-                        <div class="lang-zh">
-                            参与设计机器学习框架，利用合成数据增强与多目标优化技术，实现全包钢混凝土柱承载力的精准预测。
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="highlight-role">First Author | Submitted to CVPR 2026</div>
-                        <div class="card-title">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers</div>
-                        <span class="meta-info">Wu, T., Huang, Y., & Purwanto, E.</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="lang-en">
-                            Built on the TMBL framework to fuse physiological and video data. M3RNet enhances long-range dependency handling, achieving significant accuracy gains on PPB-Emo (+9.15%) and CL-Drive.
-                        </div>
-                        <div class="lang-zh">
-                            基于TMBL框架融合生理与视频数据。M3RNet显著增强了长距离依赖处理能力，在PPB-Emo与CL-Drive数据集上均取得大幅精度提升。
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="projects" style="margin-top: 4rem;">
+        <section id="projects" style="margin-top: 5rem;">
             <h2 class="section-title">
                 <span class="lang-en">Engineering Projects</span>
                 <span class="lang-zh">工程项目</span>
@@ -568,30 +610,44 @@
                     <div class="card-title">CES Columns Load Capacity Prediction</div>
                     <div class="meta-info">Jun 2025 | XGBoost, Optuna, SHAP</div>
                     <div class="card-body">
-                        <span class="lang-en">Developed an interpretable ML framework. Optimized 7 regression models using Optuna; identified XGBoost as optimal and used SHAP for structural interpretability.</span>
-                        <span class="lang-zh">开发可解释性机器学习框架。使用Optuna优化7种回归模型，确定XGBoost为最优模型并利用SHAP值进行结构工程解释。</span>
+                        <span class="lang-en">
+                            Designed a robust ML framework using a <strong>hybrid dataset</strong> (experimental + KDE-generated) to improve training diversity. Optimized 7 regression models using <strong>Optuna</strong>, identifying XGBoost as the optimal model. Utilized <strong>SHAP values</strong> to ensure the model's interpretability aligned with structural engineering principles.
+                        </span>
+                        <span class="lang-zh">
+                            设计了一个基于<strong>混合数据集</strong>（实验数据+KDE生成数据）的机器学习框架。利用 <strong>Optuna</strong> 优化了7种回归模型，确定 XGBoost 为最优模型，并结合 <strong>SHAP 值</strong>进行归因分析，确保模型具有符合结构工程原理的可解释性 。
+                        </span>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-title">Reading Log Management System</div>
-                    <div class="meta-info">Apr 2025 | Java Spring Boot, JWT</div>
+                    <div class="meta-info">Apr 2025 | Java Spring Boot, JWT, Security</div>
                     <div class="card-body">
-                        <span class="lang-en">Full-stack secure reading tracker. Implemented JWT auth, Spring Security rights management, and comprehensive Mockito testing.</span>
-                        <span class="lang-zh">全栈阅读追踪系统。实现了JWT认证、Spring Security权限管理，并完成了全面的Mockito单元测试。</span>
+                        <span class="lang-en">
+                            Developed a full-stack secure reading tracker. Implemented a robust authentication module using <strong>JWT</strong> and password encryption. Modularized backend services with <strong>Spring Boot</strong> and enforced operational rights using <strong>Spring Security</strong>. Conducted comprehensive integration testing using Mockito to ensure stability under concurrency[cite: 98, 101, 102].
+                        </span>
+                        <span class="lang-zh">
+                            开发全栈式阅读追踪系统。实现了基于 <strong>JWT</strong> 和加密算法的用户认证模块。使用 <strong>Spring Boot</strong> 模块化后端服务，并通过 <strong>Spring Security</strong> 实施严格的权限管理。利用 Mockito 完成了全面的集成测试，确保高并发下的系统稳定性 [cite: 98, 101, 102]。
+                        </span>
                     </div>
                 </div>
+
                 <div class="card">
-                    <div class="card-title">RSNA Lumbar Spine Classification</div>
-                    <div class="meta-info">Sept 2024 | Kaggle, ResNet-UNet</div>
+                    <div class="card-title">RSNA Lumbar Spine Degenerative Classification</div>
+                    <div class="meta-info">Sept 2024 | Kaggle, ResNet-UNet, PCA</div>
                     <div class="card-body">
-                        <span class="lang-en">Multi-stage deep learning model for MRI analysis. Used PCA for features and weighted loss functions to handle class imbalance.</span>
-                        <span class="lang-zh">用于MRI分析的多阶段深度学习模型。使用PCA提取特征，并采用加权损失函数解决类别不平衡问题。</span>
+                        <span class="lang-en">
+                            Constructed a multi-stage <strong>ResNet-UNet</strong> model for MRI analysis. Utilized PCA for feature extraction and <strong>weighted binary cross-entropy loss</strong> to handle class imbalance. Enhanced inference robustness through ensemble methods and soft voting mechanisms[cite: 108, 110, 112, 113].
+                        </span>
+                        <span class="lang-zh">
+                            构建了用于 MRI 分析的多阶段 <strong>ResNet-UNet</strong> 模型。利用 PCA 提取特征，并采用<strong>加权二元交叉熵损失函数</strong>解决类别不平衡问题。通过集成学习和软投票机制（Soft Voting）显著增强了推理的鲁棒性 [cite: 108, 110, 112, 113]。
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" style="margin-top: 4rem; text-align: center;">
+        <section id="contact" style="margin-top: 5rem; text-align: center;">
             <h2 class="section-title">
                 <span class="lang-en">Get In Touch</span>
                 <span class="lang-zh">联系方式</span>
@@ -599,10 +655,10 @@
             <div style="font-size: 1.1rem; margin-top: 1rem;">
                 <p><i class="fas fa-envelope" style="color:var(--accent-color); margin-right:8px;"></i> 18895396922@163.com</p>
                 <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 20px;">
-                    <a href="https://github.com/EthanTianyiWu" target="_blank" style="text-decoration: none; color: var(--primary-color); font-weight: 600;">
+                    <a href="https://github.com/EthanTianyiWu" target="_blank" style="text-decoration: none; color: var(--primary-color); font-weight: 600; transition: color 0.3s;">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://scholar.google.com/citations?user=o00kcT4AAAAJ&hl=zh-CN" target="_blank" style="text-decoration: none; color: var(--primary-color); font-weight: 600;">
+                    <a href="https://scholar.google.com/citations?user=o00kcT4AAAAJ&hl=zh-CN" target="_blank" style="text-decoration: none; color: var(--primary-color); font-weight: 600; transition: color 0.3s;">
                         <i class="fas fa-graduation-cap"></i> Google Scholar
                     </a>
                 </div>
@@ -636,14 +692,11 @@
             }
         }
 
-        // Initialize (ensure consistent display based on CSS defaults)
+        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            // CSS handles initial state (.lang-zh display: none), 
-            // but this ensures logical consistency if we add complexity later.
             const zhElements = document.querySelectorAll('.lang-zh');
             zhElements.forEach(el => el.style.display = 'none');
         });
     </script>
-
-    </body>
+</body>
 </html>
