@@ -6,13 +6,13 @@
     <title>Tianyi Wu (Ethan) - Personal Academic Page</title>
     <style>
         :root {
-            --primary-color: #2A6EAF; /* A more refined, slightly desaturated blue */
-            --secondary-color: #1D2F3E; /* Darker, sophisticated for nav/footer */
-            --accent-color: #E67E22; /* A warm, vibrant accent (e.g., orange/copper) */
-            --light-bg-color: #F8F9FA; /* Very light gray for main background */
+            --primary-color: #2A6EAF;
+            --secondary-color: #1D2F3E;
+            --accent-color: #E67E22;
+            --light-bg-color: #F8F9FA;
             --card-bg-color: #FFFFFF;
-            --text-color: #343A40; /* Dark gray for body text */
-            --heading-color: #2C3E50; /* Slightly different dark for headings */
+            --text-color: #343A40;
+            --heading-color: #2C3E50;
             --border-color: #DEE2E6;
             --heading-font: 'Montserrat', sans-serif;
             --body-font: 'Open Sans', sans-serif;
@@ -46,15 +46,15 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 10px var(--shadow-medium);
-            display: flex; /* For better alignment */
-            justify-content: center; /* Center nav items */
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
         .navbar a {
-            color: #EAEAEA; /* Lighter color for better contrast on dark nav */
+            color: #EAEAEA;
             margin: 0 1.2rem;
             text-decoration: none;
-            font-weight: 600; /* Slightly bolder */
+            font-weight: 600;
             font-size: 1rem;
             transition: color 0.3s ease, transform 0.3s ease;
             padding: 0.5rem 0;
@@ -68,10 +68,10 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, #1A4A7A 100%);
             color: #FFFFFF;
-            padding: 6rem 2rem 4rem; /* More padding, accounting for fixed nav */
+            padding: 6rem 2rem 4rem;
             text-align: center;
-            position: relative; /* For potential pseudo-elements */
-            margin-top: 60px; /* Height of navbar approx */
+            position: relative;
+            margin-top: 60px;
         }
         .hero-content {
             max-width: 800px;
@@ -79,7 +79,7 @@
         }
         .hero h1 {
             font-family: var(--heading-font);
-            font-size: 3em; /* Larger */
+            font-size: 3em;
             font-weight: 700;
             margin-bottom: 0.75rem;
             color: #FFFFFF;
@@ -87,19 +87,19 @@
         }
         .hero .subtitle {
             font-size: 1.3em;
-            font-weight: 300; /* Lighter weight for subtitle */
+            font-weight: 300;
             margin-bottom: 1.5rem;
             opacity: 0.9;
             line-height: 1.5;
         }
         .profile-img-hero {
-            width: 180px; /* Larger */
+            width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 5px solid var(--accent-color); /* Accent border */
-            margin: 0 auto 2rem auto; /* Centered, with margin bottom */
+            border: 5px solid var(--accent-color);
+            margin: 0 auto 2rem auto;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            display: block; /* Ensure it's block for margin auto to work */
+            display: block;
         }
 
         /* Main Content Container */
@@ -112,9 +112,9 @@
         /* Section Styling */
         .section {
             background-color: var(--card-bg-color);
-            padding: 2.5rem 2rem; /* More padding */
-            margin-bottom: 2.5rem; /* More space between sections */
-            border-radius: 12px; /* More pronounced radius */
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            border-radius: 12px;
             box-shadow: 0 8px 30px var(--shadow-light);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -125,15 +125,15 @@
 
         .section-title {
             font-family: var(--heading-font);
-            font-size: 2.2em; /* Larger section titles */
+            font-size: 2.2em;
             font-weight: 700;
             color: var(--heading-color);
             text-align: center;
-            margin-bottom: 2.5rem; /* More space after title */
+            margin-bottom: 2.5rem;
             position: relative;
             padding-bottom: 0.75rem;
         }
-        .section-title::after { /* Underline accent */
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -145,7 +145,7 @@
             border-radius: 2px;
         }
 
-        h3 { /* Sub-headings within sections */
+        h3 {
             font-family: var(--heading-font);
             font-size: 1.5em;
             font-weight: 600;
@@ -154,23 +154,23 @@
             margin-bottom: 1rem;
         }
 
-        /* Card Styling (for Publications and Projects) */
+        /* Card Styling */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
         .card {
-            background-color: #FDFDFD; /* Slightly off-white */
+            background-color: #FDFDFD;
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 1.8rem; /* More padding */
+            padding: 1.8rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
-            flex-direction: column; /* Ensure content flows top to bottom */
+            flex-direction: column;
         }
         .card:hover {
-            transform: translateY(-8px); /* More lift */
+            transform: translateY(-8px);
             box-shadow: 0 10px 25px var(--shadow-medium);
         }
         .card .title {
@@ -183,12 +183,12 @@
         }
         .card .authors, .card .role {
             font-style: italic;
-            color: #5F6C7B; /* Muted color */
+            color: #5F6C7B;
             font-size: 0.95em;
             margin-bottom: 0.6rem;
         }
         .card .venue, .card .date {
-            color: #7F8C9B; /* Muted color */
+            color: #7F8C9B;
             font-size: 0.9em;
             margin-bottom: 1rem;
         }
@@ -196,15 +196,15 @@
             font-size: 0.95em;
             line-height: 1.6;
             margin-bottom: 1rem;
-            flex-grow: 1; /* Make description take available space */
+            flex-grow: 1;
         }
         .card .description ul {
             list-style-position: outside;
-            padding-left: 1.2rem; /* Indent list items */
+            padding-left: 1.2rem;
             margin-top: 0.5rem;
         }
         .card .description li {
-            margin-bottom: 0.5rem; /* Space between list items */
+            margin-bottom: 0.5rem;
         }
         .card .links a {
             text-decoration: none;
@@ -220,29 +220,29 @@
         }
         .external-link-icon {
             display: inline-block;
-            width: 1em; /* Relative to font size */
+            width: 1em;
             height: 1em;
             margin-left: 0.3em;
             background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23E67E22%22%3E%3Cpath%20d%3D%22M19%2019H5V5h7V3H5c-1.11%200-2%20.9-2%202v14c0%201.1.9%202%202%202h14c1.1%200%202-.9%202-2v-7h-2v7zM14%203v2h3.59l-9.83%209.83%201.41%201.41L19%206.41V10h2V3h-7z%22%2F%3E%3C%2Fsvg%3E');
             background-repeat: no-repeat;
             background-size: contain;
             vertical-align: middle;
-            filter: brightness(0.9); /* Slightly tone down icon if needed */
+            filter: brightness(0.9);
         }
-        .card .technologies { /* Container for tags */
-            margin-top: auto; /* Push to bottom if card is flex */
-            padding-top: 1rem; /* Space above tags */
+        .card .technologies {
+            margin-top: auto;
+            padding-top: 1rem;
         }
         .tag {
             display: inline-block;
-            background-color: var(--primary-color); /* Primary color for tags */
+            background-color: var(--primary-color);
             opacity: 0.85;
             color: white;
-            padding: 0.4em 0.9em; /* Em-based padding */
+            padding: 0.4em 0.9em;
             margin: 0.25em;
             border-radius: 5px;
             font-size: 0.85em;
-            font-weight: 500; /* Lighter weight */
+            font-weight: 500;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .tag:hover {
@@ -250,14 +250,14 @@
             transform: scale(1.05);
         }
         .cv-link {
-            text-align: center; /* Center the button */
+            text-align: center;
             margin-top: 1.5rem;
         }
         .cv-link a {
             display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 0.9rem 2.2rem; /* Generous padding */
+            padding: 0.9rem 2.2rem;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
@@ -266,7 +266,7 @@
             box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
         }
         .cv-link a:hover {
-            background-color: #D35400; /* Darker accent */
+            background-color: #D35400;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
         }
@@ -279,26 +279,26 @@
             align-items: flex-start;
         }
         #about .about-text {
-            flex: 2; /* Takes more space */
+            flex: 2;
             min-width: 300px;
         }
         #about .about-details {
             flex: 1;
             min-width: 280px;
-            background-color: #F8F9FA; /* Light background for detail box */
+            background-color: #F8F9FA;
             padding: 1.5rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
         }
         #about .about-details h3 {
-            margin-top: 0; /* Remove top margin for first h3 in this box */
+            margin-top: 0;
             font-size: 1.3em;
         }
 
         /* Footer */
         .footer {
             background-color: var(--secondary-color);
-            color: #BDC3C7; /* Lighter gray */
+            color: #BDC3C7;
             text-align: center;
             padding: 3rem 1.5rem;
             margin-top: 3rem;
@@ -327,7 +327,7 @@
             .hero h1 { font-size: 2.2em; }
             .hero .subtitle { font-size: 1.1em; }
             .profile-img-hero { width: 140px; height: 140px; }
-            .navbar { padding: 0.8rem 1rem; justify-content: space-around; } /* Spread out more on mobile */
+            .navbar { padding: 0.8rem 1rem; justify-content: space-around; }
             .navbar a { margin: 0 0.5rem; font-size: 0.9rem; }
             .section { padding: 2rem 1.5rem; }
             .section-title { font-size: 1.8em; }
@@ -341,6 +341,7 @@
     <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#internships">Internships</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -353,7 +354,7 @@
             <h1>Tianyi Wu</h1>
             <p class="subtitle">Information & Computing Science Undergraduate at XJTLU.<br>Research on Deep Learning, Multimodal Emotion Recognition, AI applications in Education & Biomedicine.</p>
             <div class="cv-link">
-                <a href="assets/CV_12.4.pdf" target="_blank">Download CV <span class="external-link-icon"></span></a>
+                <a href="assets/CV_12.4.pdf" target="_blank">Download CV (Updated) <span class="external-link-icon"></span></a>
             </div>
         </div>
     </header>
@@ -363,8 +364,8 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="mb-2">I am an undergraduate student at Xi'an Jiaotong-Liverpool University (XJTLU), pursuing a Bachelor's in Information and Computing Science with an expected graduation in July 2026. I maintain a GPA of 3.78/4.0 and was honored with the 2023-2024 Undergraduate Academic Scholarship (Top 10%).</p>
-                    <p class="mb-2">My research focuses on advancing multimodal emotion recognition through innovative deep learning architectures. Key projects like Phy-FusionNet and EmoMA-Net represent my work in integrating memory-augmented transformers and hybrid neural networks to improve emotional cue detection and enhance adaptive learning environments using physiological data. I am passionate about applying these technologies to create impactful solutions in education and biomedical fields.</p>
+                    <p class="mb-2">I am an undergraduate student at Xi'an Jiaotong-Liverpool University (XJTLU), pursuing a Bachelor's in Information and Computing Science with an expected graduation in July 2026. I maintain a GPA of 3.78/4.0 and have been honored with the <strong>2025 National Encouragement Scholarship</strong> and the 2023-2024 Undergraduate Academic Scholarship (Top 10%).</p>
+                    <p class="mb-2">My research focuses on advancing multimodal emotion recognition and clinical event prediction through innovative deep learning architectures. Key projects like Phy-FusionNet and M3RNet represent my work in integrating memory-augmented transformers and hybrid neural networks. I am passionate apply these technologies to create impactful solutions in educational and biomedical fields.</p>
                     <p>Beyond academics, I am proficient in both Chinese (native) and English (TOEFL 107 score). My interests include Piano (Level 10, Shanghai Conservatory of Music), Street Dance (Level 4, China Street Dance Association), Badminton, and Movies. I am also an active member of the XJTLU Psychology Association (PSYA).</p>
                 </div>
                 <aside class="about-details">
@@ -381,39 +382,102 @@
             </div>
         </section>
 
+        <section id="internships" class="section">
+            <h2 class="section-title">Internship Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="title">Solution Department Intern</span>
+                    <span class="role">Suzhou Artificial Intelligence Co., Ltd.</span>
+                    <span class="date">Aug. 2025 - Sept. 2025</span>
+                    <div class="description">
+                        <ul>
+                            <li>Contributed to the customization of the JeecgBoot open-source platform by fixing bugs and tailoring functional modules.</li>
+                            <li>Executed platform deployment and environment configuration (Nginx, Tomcat, MySQL, Redis), and developed automated scripts for one-click deployment.</li>
+                            <li>Enhanced AI Agent functionality by optimizing prompt engineering strategies and improved model API call methods to boost accuracy and efficiency.</li>
+                            <li>Established a GitLab-based CI/CD automation pipeline for code submission, building, testing, and deployment.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">JeecgBoot</span> <span class="tag">Redis</span> <span class="tag">Nginx</span> <span class="tag">AI Agent</span> <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="title">Software Development Intern (Back-end)</span>
+                    <span class="role">Yangtze River Delta Information Intelligence Innovation Research Institute</span>
+                    <span class="date">May 2025 - Aug. 2025</span>
+                    <div class="description">
+                        <ul>
+                            <li>Designed and implemented energy consumption dashboards for industrial IoT equipment using the FastAPI framework.</li>
+                            <li>Applied Pydantic for data modeling and constructed an energy consumption computation engine tailored to time-of-use pricing.</li>
+                            <li>Deployed a trained OLS model as a RESTful API for energy forecasting and optimized complex SQL queries for high concurrency.</li>
+                            <li>Developed a component recognition system for automotive lines using CLIP and DINO for rapid identification under low-data conditions.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">FastAPI</span> <span class="tag">IoT</span> <span class="tag">SQL Optimization</span> <span class="tag">CLIP/DINO</span> <span class="tag">Pydantic</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="research" class="section">
             <h2 class="section-title">Research & Publications</h2>
             <div class="card-grid">
-                <div class="card">
-                    <span class="title">EmoMA-Net: A Novel Model for Emotion Recognition Using Hybrid Multimodal Neural Networks in Adaptive Educational Systems</span>
-                    <span class="authors">Wu, T., Huang, Y., Craig, P., & Purwanto, E. (2024)</span>
-                    <span class="venue">Published: 7th Int. Conference on Big Data and Education (ICBDE 2024), Oxford, UK.</span>
-                     <p class="role mb-1">Role: First Author and Research Fellow</p>
-                    <p class="abstract">Developed EmoMA-Net, an innovative multimodal neural network for real-time emotion recognition in educational settings, leveraging physiological data from wearable sensors to provide educators with real-time student stress feedback and optimize adaptive learning environments. The model integrates LSTM and CNN to capture temporal-spatial features in physiological signals, and incorporates the Convolutional Block Attention Module (CBAM) to enhance feature relevance, overcoming limitations of traditional attention mechanisms via channel and spatial attention. LSTM improves temporal analysis by addressing gradient vanishing in standard RNNs, boosting time-series processing. Tested on the WESAD dataset, EmoMA-Net achieves 99.66% prediction accuracy, demonstrating superior performance in emotion recognition and strong potential for real-time, high-stakes educational applications.</p>
-                    <p class="links">
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=o00kcT4AAAAJ&citation_for_view=o00kcT4AAAAJ:u5HHmVD_uO8C" target="_blank">Google Scholar <span class="external-link-icon"></span></a>
-                    </p>
-                </div>
                  <div class="card">
-                    <span class="title">Enhancing Multilingual Emotion Classification with Attention Mechanism for Transnational Education</span>
-                    <span class="authors">Wu, T., Huang, Y., Purwanto, E., Juwono, F., & Tang, F. (2025)</span>
-                    <span class="venue">Published: Int. Conference on Artificial Intelligence and Education (ICAIE 2025), Suzhou, China.</span>
-                     <p class="role mb-1">Role: First Author and Research Fellow</p>
-                    <p class="abstract">This research proposes an enhanced XLM-ROBERTa framework that integrates a multi-head self-attention mechanism, attention pooling, and Low-rank Adaptation (LoRA) for efficient fine-tuning in multilingual emotion classification.  Tested on the SemEval2018 Task 1 dataset (Arabic, English, Spanish), the model achieved an accuracy of 0.87 and an F1-score of 0.85, outperforming baseline models.  The work aims to understand emotional expressions across languages in transnational education to foster better communication and global perspectives.</p>
+                    <span class="title">Multimodal Temporal Point Process Modeling for Clinical Event Prediction</span>
+                    <span class="venue">Shenzhen Research Institute of Big Data (Research Program)</span>
+                    <span class="date">June 2025 - Present</span>
+                    <div class="description">
+                        <ul>
+                            <li>Constructed a baseline temporal point process model (TPP-T) and a multimodal fusion model (M-TPP) using the MIMIC-IV dataset.</li>
+                            <li>Encoded and fused high-frequency vital signs with event embeddings into an RNN core.</li>
+                            <li>Conducted comparative experiments on predicting hospital admission timing (regression) and clinical causes (classification).</li>
+                            <li>Analyzed feature coverage rates and suggested enhancements like M-TPP attention gates for improved predictive performance.</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">Temporal Point Process</span> <span class="tag">MIMIC-IV</span> <span class="tag">RNN</span> <span class="tag">Clinical Prediction</span>
+                    </div>
                 </div>
+
+                <div class="card">
+                    <span class="title">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers</span>
+                    <span class="authors">Wu, T., Huang, Y., & Purwanto, E. (2025)</span>
+                    <span class="venue">Submitted: IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2026</span>
+                    <p class="role mb-1">Role: First Author</p>
+                    <p class="abstract">M3RNet enhances long-term feature retention in multimodal emotion recognition via a memory-augmented Transformer component (Memory Stream). Built on the TMBL framework, it enables advanced multimodal fusion of physiological and video data. Experiments show M3RNet achieves +9.15% accuracy on PPB-Emo and +10.09% over baselines on CL-Drive.</p>
+                </div>
+
                 <div class="card">
                     <span class="title">Phy-FusionNet: A Memory-Augmented Transformer for Multimodal Emotion Recognition with Periodicity and Contextual Attention</span>
-                    <span class="authors">Purwanto, E., Wu, T., & Huang, Y.</span>
-                    <span class="venue">Status: Submitted to IEEE Transactions on Affective Computing</span>
-                    <p class="role mb-1">Role: First Author and Research Fellow</p>
-                    <p class="abstract">Phy-FusionNet is an advanced memory-augmented transformer designed to improve multimodal emotion recognition by addressing limitations in capturing subtle emotional cues and long-term dependencies.  Key innovations include a memory stream module for enhanced feature and context preservation, a Fourier analysis-based mechanism to incorporate periodicity, and a head hybrid attention mechanism for computational efficiency.  Evaluated on multiple datasets (WESAD, CL-Drive, PPB-Emo, etc.), Phy-FusionNet demonstrates superior performance, outperforming baseline transformers by ≥13.75% and improving accuracy by ≥4.86% through TMBL-based multimodal fusion.</p>
+                    <span class="authors">Wu, T., Purwanto, E., & Huang, Y. (2025)</span>
+                    <span class="venue">Published: IEEE Transactions on Affective Computing</span>
+                    <p class="role mb-1">Role: First Author</p>
+                    <p class="abstract">Phy-FusionNet incorporates a Fourier-based periodicity modeling module to capture intrinsic physiological rhythms and a head hybrid attention mechanism. Validated on WESAD, CL-Drive, and PPB-Emo databases, achieving performance improvements of 13.75% over standard transformers.</p>
                 </div>
+
                 <div class="card">
-                    <span class="title">M3RNet: Enhancing Multimodal Emotion Recognition with Memory-Augmented Transformers on Physiological, Behavioral, and Video Modalities</span>
-                    <span class="authors">Wu, T., Huang, Y., & Purwanto, E.</span>
-                    <span class="venue">Status: Submitted to International Conference on Computer Vision (ICCV 2025)</span>
-                    <p class="role mb-1">Role: First Author and Research Fellow</p>
-                    <p class="abstract">M3RNet enhances long-term feature retention in multimodal emotion recognition via a memory-augmented Transformer component (Memory Stream). Built on the TMBL framework, it enables advanced multimodal fusion of physiological and video data, improving Transformer's long-range dependency handling. Experiments show M3RNet achieves +9.15% accuracy on PPB-Emo and +10.09% over baselines on CL-Drive, demonstrating robust cross-modal performance and practical adaptability.</p>
+                    <span class="title">Reliable Machine Learning and Multi-objective Optimization Framework... for Fully-encased Steel Columns</span>
+                    <span class="authors">Oluwadahunsi, S., Dada, T., Huang, Y., Wu, T., et al. (2025)</span>
+                    <span class="venue">Under Review: Journal of Building Engineering</span>
+                    <p class="role mb-1">Role: Co-Author</p>
+                    <p class="abstract">Developed a reliable framework for predicting load capacity using synthetic data augmentation and optimization. (See Projects for technical implementation details).</p>
+                </div>
+
+                <div class="card">
+                    <span class="title">Enhancing Multilingual Emotion Classification with Attention Mechanism for Transnational Education</span>
+                    <span class="authors">Wu, T., Huang, Y., Purwanto, E., Juwono, F., & Tang, F. (2025)</span>
+                    <span class="venue">Published: Int. Conf. on Artificial Intelligence and Education (ICAIE 2025)</span>
+                    <p class="role mb-1">Role: First Author</p>
+                    <p class="abstract">Proposes an enhanced XLM-ROBERTa framework integrating multi-head self-attention and LoRA for efficient fine-tuning. Achieved 0.87 accuracy on SemEval2018 Task 1.</p>
+                </div>
+
+                <div class="card">
+                    <span class="title">EmoMA-Net: A Novel Model for Emotion Recognition Using Hybrid Multimodal Neural Networks</span>
+                    <span class="authors">Wu, T., Huang, Y., Craig, P., & Purwanto, E. (2024)</span>
+                    <span class="venue">Published: 7th Int. Conf. on Big Data and Education (ICBDE 2024)</span>
+                    <p class="role mb-1">Role: First Author</p>
+                    <p class="abstract">Developed EmoMA-Net using LSTM and CNN with CBAM attention to capture temporal-spatial features in physiological signals. Achieved 99.66% prediction accuracy on the WESAD dataset.</p>
                 </div>
             </div>
         </section>
@@ -422,21 +486,35 @@
             <h2 class="section-title">Project Experience</h2>
             <div class="card-grid">
                 <div class="card">
-                    <span class="title">Reading Log Management and Analysis System</span>
-                    <span class="date">Timeline: Expected Apr. 2025</span>
-                    <p class="role">Role: Developer</p>
+                    <span class="title">ML Framework for Predicting Load Capacity of CES Columns</span>
+                    <span class="date">Timeline: June 2025</span>
+                    <p class="role">Role: Developer / Researcher</p>
                     <div class="description">
                         <ul>
-                            <li>Developed a secure, efficient reading log tracking system with a user authentication module, covering user registration, email verification, password encryption, JWT-based session management, role assignment, and password recovery.</li>
-                            <li>Enhanced reading record management with multi-criteria search and filtering; utilized HTML5, CSS3, JavaScript for dynamic frontend, and Spring Boot for efficient backend CRUD APIs, with dual front-end/back-end data validation.</li>
-                            <li>Modularized backend services with a clear hierarchical structure and implemented Spring Security for global security filtering and operational rights management.</li>
-                            <li>Designed and executed comprehensive unit and integration tests (Mockito, Spring Boot Test) for core functionalities and exception scenarios; conducted load testing for system stability under high concurrency.</li>
+                            <li>Designed an interpretable ML framework to predict the ultimate load-carrying capacity of Concrete-Encased Steel (CES) members using a hybrid dataset (experimental + KDE-generated).</li>
+                            <li>Developed and optimized seven regression models (XGBoost, CatBoost, LightGBM, Random Forest, etc.) using Optuna for hyperparameter tuning.</li>
+                            <li>Identified XGBoost as the optimal model and utilized SHAP values and partial dependence plots to interpret the model and ensure alignment with structural engineering principles.</li>
                         </ul>
                     </div>
                     <div class="technologies">
-                        <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JavaScript</span> <span class="tag">JWT</span> <span class="tag">Mockito</span>
+                        <span class="tag">XGBoost</span> <span class="tag">Optuna</span> <span class="tag">SHAP</span> <span class="tag">Civil Engineering AI</span>
                     </div>
-                    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+                </div>
+
+                <div class="card">
+                    <span class="title">Reading Log Management and Analysis System</span>
+                    <span class="date">Timeline: Apr. 2025</span>
+                    <p class="role">Role: Developer</p>
+                    <div class="description">
+                        <ul>
+                            <li>Developed a secure reading tracker with user authentication (JWT, encryption) and role assignment.</li>
+                            <li>Modularized backend services using Spring Boot and implemented Spring Security for rights management.</li>
+                            <li>Enhanced data access with multi-criteria search/filtering and conducted comprehensive unit/integration testing (Mockito).</li>
+                        </ul>
+                    </div>
+                    <div class="technologies">
+                        <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">Spring Security</span> <span class="tag">JWT</span> <span class="tag">Mockito</span>
+                    </div>
                 </div>
                 
                 <div class="card">
@@ -445,13 +523,13 @@
                     <p class="role">Role: Competitor</p>
                     <div class="description">
                         <ul>
-                            <li>Developed a multi-stage ResNet-UNet deep learning model for detecting and classifying lumbar spine degenerative conditions from MRI images, enhancing diagnostic precision. Utilized PCA for feature extraction and methods like histogram equalization and Gaussian filtering for high-quality image preprocessing.</li>
-                            <li>Constructed a complex model using ResNet as an encoder for deep features and multi-scale context, and UNet for decoding with symmetrical skip connections to preserve high-resolution features. Integrated multi-task learning at the classifier head for predicting severity levels of various spinal conditions.</li>
-                            <li>Addressed class imbalance with weighted binary cross-entropy loss, improved prediction probability stability using temperature scaling and post-processing, and enhanced inference robustness through ensemble methods and soft voting.</li>
+                            <li>Developed a ResNet-UNet model for classifying lumbar spine conditions from MRI images.</li>
+                            <li>Utilized PCA for feature extraction and histogram equalization for preprocessing.</li>
+                            <li>Addressed class imbalance with weighted binary cross-entropy loss and used ensemble methods/soft voting for robust inference.</li>
                         </ul>
                     </div>
-                     <div class="technologies">
-                        <span class="tag">Python</span> <span class="tag">Deep Learning</span> <span class="tag">ResNet-UNet</span> <span class="tag">PCA</span> <span class="tag">MRI Analysis</span>
+                      <div class="technologies">
+                        <span class="tag">Python</span> <span class="tag">Deep Learning</span> <span class="tag">ResNet-UNet</span> <span class="tag">MRI Analysis</span>
                     </div>
                 </div>
 
@@ -461,45 +539,29 @@
                     <p class="role">Role: Analyst</p>
                     <div class="description">
                         <ul>
-                            <li>Performed preprocessing on student data and used PCA for feature extraction and dimensionality reduction, analyzing feature contribution in project classification and impact on model performance.</li>
-                            <li>Classified student projects using decision trees, random forests, SVM, and Naive Bayes algorithms, compared their performance, and built an ensemble classifier to compare feature selection methods.</li>
-                            <li>Fitted feature distributions using GMM, k-means, and hierarchical clustering algorithms to find methods reflecting project information distribution and assessed clustering results' association with student projects.</li>
+                            <li>Performed preprocessing and PCA feature extraction on student data.</li>
+                            <li>Classified projects using SVM, Random Forest, and Naive Bayes; built ensemble classifiers.</li>
+                            <li>Fitted feature distributions using GMM and K-means clustering.</li>
                         </ul>
                     </div>
                     <div class="technologies">
-                        <span class="tag">Python</span> <span class="tag">Scikit-learn</span> <span class="tag">PCA</span> <span class="tag">Classification</span> <span class="tag">Clustering</span>
+                        <span class="tag">Python</span> <span class="tag">Scikit-learn</span> <span class="tag">PCA</span> <span class="tag">Clustering</span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <span class="title">Machine Learning and Deep Learning Practice Project Collection: Regression Analysis and Deep Learning Applications</span>
-                    <span class="date">Timeline: Jan. 2024 - May 2024</span>
-                     <p class="role">Role: Developer</p>
-                    <div class="description">
-                        <ul>
-                            <li>Implemented regression algorithms and multivariate models, optimizing linear and logistic regression with gradient descent, and utilized data visualization for model parameter tuning.</li>
-                            <li>Used CNNs and MLPs for MNIST dataset classification, developed RNN models with PyTorch for text classification, optimizing with SGD and NLLLoss.</li>
-                            <li>Constructed sequence-to-sequence models for translation accuracy assessment, developed a CNN for MNIST image classification with data augmentation and regularization, and implemented model saving/loading functionalities.</li>
-                        </ul>
-                    </div>
-                    <div class="technologies">
-                        <span class="tag">Python</span> <span class="tag">PyTorch</span> <span class="tag">CNN</span> <span class="tag">MLP</span> <span class="tag">RNN</span> <span class="tag">Regression</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <span class="title">MetaTeddy: Interactive Reality Modeling Interface for 3D Freeform Design</span>
+                    <span class="title">MetaTeddy: Interactive Reality Modeling Interface</span>
                     <span class="date">Timeline: Jun. 2023 - Sept. 2023</span>
                     <p class="role">Role: Summer Undergraduate Research Fellow</p>
                     <div class="description">
                         <ul>
-                            <li>Gathered literature and technical information from Google Scholar, IEEE Xplore, and ACM Digital Library to support project implementation and innovation.</li>
-                            <li>Developed a 2D interactive interface based on the Teddy system framework using Unity, implementing precise cutting with CGAL and partitioning algorithms, and enhancing model rotation usability with the TouchScript plugin.</li>
-                            <li>Integrated XR technologies, combining MetaTeddy with Microsoft HoloLens 2 via Unity and AR Foundation for 2D to 3D model visualization, using Node.js and Socket.io for server-AR device communication.</li>
+                            <li>Developed a 2D interactive interface using Unity and CGAL for precise cutting operations.</li>
+                            <li>Integrated Microsoft HoloLens 2 via AR Foundation for 2D-to-3D visualization.</li>
+                            <li>Used Node.js and Socket.io for real-time server-device communication.</li>
                         </ul>
                     </div>
                     <div class="technologies">
-                        <span class="tag">Unity</span> <span class="tag">CGAL</span> <span class="tag">Hololens 2</span> <span class="tag">AR</span> <span class="tag">Node.js</span> <span class="tag">XR</span>
+                        <span class="tag">Unity</span> <span class="tag">CGAL</span> <span class="tag">Hololens 2</span> <span class="tag">Node.js</span>
                     </div>
                 </div>
             </div>
@@ -509,31 +571,32 @@
             <h2 class="section-title">Core Competencies</h2>
              <h3>Programming & Tools</h3>
             <p class="text-center mb-3">
-                <span class="tag">Python (Pandas, Numpy, Scikit-learn, TensorFlow, PyTorch, pytest)</span>
-                <span class="tag">Java (JUnit, Spring Boot)</span>
-                <span class="tag">SQL (MySQL, Snowflake)</span>
-                <span class="tag">R</span> <span class="tag">Matlab</span> <span class="tag">Git & GitHub</span>
+                <span class="tag">Python (Pandas, Numpy, Scikit-learn, TensorFlow, PyTorch, FastAPI)</span>
+                <span class="tag">Java (Spring Boot, Spring Security)</span>
+                <span class="tag">SQL (MySQL, Snowflake, Redis)</span>
+                <span class="tag">Web (HTML5, CSS3, JavaScript, Nginx)</span>
+                <span class="tag">C/C#</span> <span class="tag">R</span> <span class="tag">Matlab</span> <span class="tag">Git & CI/CD</span>
             </p>
             <h3>Technical Domains</h3>
             <p class="text-center mb-3">
-                <span class="tag">Machine Learning</span> <span class="tag">Deep Learning</span>
-                <span class="tag">Data Analysis & Visualization</span> <span class="tag">Software Engineering</span>
-                <span class="tag">Computer Vision</span> <span class="tag">Multimodal Learning</span>
-                <span class="tag">Full-Stack Development</span> <span class="tag">XR Development</span>
+                <span class="tag">Machine Learning</span> <span class="tag">Deep Learning (Transformers, CNN, LSTM)</span>
+                <span class="tag">Multimodal Emotion Recognition</span> <span class="tag">Clinical Event Prediction</span>
+                <span class="tag">Backend Development</span> <span class="tag">IoT & Energy Systems</span>
+                <span class="tag">XR Development</span>
             </p>
         </section>
 
         <section id="contact" class="section text-center">
             <h2 class="section-title">Get In Touch</h2>
             <p class="mb-2" style="font-size: 1.1em;">I'm always open to discussing new projects, research collaborations, or opportunities.</p>
-            <p class="mb-1"><strong>Email:</strong> <a href="mailto:18895396922@163.com" style="color:var(--accent-color); font-weight:600;">18895396922@163.com</a></p>
+            <p class="mb-1"><strong>Email:</strong> <a href="mailto:tianyiwuapply@163.com" style="color:var(--accent-color); font-weight:600;">tianyiwuapply@163.com</a></p>
             <p class="mb-1"><strong>GitHub:</strong> <a href="https://github.com/EthanTianyiWu" target="_blank" style="color:var(--accent-color); font-weight:600;">github.com/EthanTianyiWu <span class="external-link-icon"></span></a></p>
             <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=o00kcT4AAAAJ&hl=zh-CN" target="_blank" style="color:var(--accent-color); font-weight:600;">My Profile <span class="external-link-icon"></span></a></p>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Tianyi Wu. All Rights Reserved.</p>
+        <p>&copy; 2026 Tianyi Wu. All Rights Reserved.</p>
     </footer>
 
 </body>
